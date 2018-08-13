@@ -1,0 +1,33 @@
+.survey-intro-cover {
+    width: auto;
+    height: 90vh;
+    padding-top: 10vh;
+    background-color: #ebf3f5;
+}
+
+.survey-intro-content-container {
+    width: 50vw;
+    margin-left: 25vw;
+    background-color: #ebf3f5;
+    text-align: center;
+}
+
+.survey-intro-main-caption {
+    width: 50vw;
+    font-size: 4vmin;
+    background-color: #ebf3f5;
+    text-align: center;
+}
+
+
+.survey-intro-sub-caption-top {
+
+}
+
+.survey-section-gotosurvey-button {
+
+}
+
+.survey-intro-subcaption-bottom {
+
+}

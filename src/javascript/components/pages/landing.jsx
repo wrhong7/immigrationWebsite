@@ -10,6 +10,10 @@ export default function Landing () {
     Disclaimer
   </div>;
 
+  const tips = <div className="landing-page-header-disclaimer-button header-button hover-pointer">
+    Tips
+  </div>;
+
   const mainscript = <div className="landing-page-intro-mainscript">
     Immigration Tips<br/>For Skilled Workers*
   </div>;
@@ -24,7 +28,7 @@ export default function Landing () {
 
   return <div className="landing-page-cover">
     <div className="landing-page-header">
-      {disclaimer} {about}
+      {tips} {disclaimer} {about}
     </div>
     <div className="landing-page-intro-section">
       {mainscript}
