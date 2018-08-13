@@ -1,0 +1,56 @@
+.landing-page-cover {
+    /*dimensional properties*/
+    width: auto;
+    height: 90vh;
+
+    /*background image properties*/
+    background-image: url("https://s3.amazonaws.com/won-jun-hong-immigration/landingPageHighRes2.jpg");
+    background-size: cover;
+
+    /*font color properties*/
+    color: white;
+
+    /*cover page margin and padding properties*/
+    padding: 5vh;
+}
+
+.landing-page-header {
+    font-size: 3vmin;
+    margin-right: 5vw;
+    float: right;
+}
+
+.landing-page-intro-section {
+    width: 50vw;
+    min-width: 600px;
+
+    margin-top: 30vh;
+    margin-left: 3vw;
+}
+
+.header-button {
+    float: right;
+    width: 8vw;
+    text-align: center;
+}
+
+.landing-page-intro-mainscript {
+    font-size: 8vmin;
+    line-height: 12vmin;
+}
+
+.go-to-survey-button {
+    width: 20vw;
+    margin-top: 3vmin;
+    margin-left: 15vmin;
+    margin-right: 3vmin;
+    margin-bottom: 1.5vmin;
+    padding: 2vmin;
+    text-align: center;
+    background-color: #cf0205;
+    border-radius: 1vmin;
+}
+
+.landing-page-intro-astrix-explanation {
+    margin-top: 6vmin;
+}
