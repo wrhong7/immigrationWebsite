@@ -19,7 +19,7 @@ export  default function surveyIntro() {
     will match you to the best country.
   </div>;
 
-  return <div className="survey-intro-cover">
+  return <div className="survey-intro-cover" id="survey">
     <div className="survey-intro-content-container">
       {surveyIntroMainCaption}
       {surveyIntroSubCaptionTop}

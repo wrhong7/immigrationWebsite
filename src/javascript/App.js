@@ -12,8 +12,6 @@ function App() {
 
   //using root reducer to create a store and apply middleware-thunk for async action creators;
   const store = createStore(rootReducer, applyMiddleware(thunk));
-
-
   return <Provider store={store}>
     <MainContainer/>
   </Provider>

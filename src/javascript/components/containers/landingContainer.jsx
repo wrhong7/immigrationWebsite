@@ -7,7 +7,6 @@ const mapStateToProps = state => {};
 
 const mapDispatchToProps = dispatch => ({
   handleButtonClick: (sectionId) => dispatch(actions.setActiveSectionId(sectionId)),
-  testFunction: () => "hello",
 });
 
 export default connect(
