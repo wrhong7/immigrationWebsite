@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import logo from '../resources/logo.svg';
 import '../styles/App.css';
 import MainContainer from './components/containers/mainContainer.jsx';
@@ -12,9 +13,21 @@ function App() {
 
   //using root reducer to create a store and apply middleware-thunk for async action creators;
   const store = createStore(rootReducer, applyMiddleware(thunk));
-  return <Provider store={store}>
-    <MainContainer/>
-  </Provider>
+
+  const goToLandingPage = () => {
+    return <Provider store={store}>
+      <MainContainer/>
+    </Provider>
+  }
+
+  return <BrowserRouter>
+    <div>
+      <Switch>
+        <Route exact path="/" component={goToLandingPage} />
+      </Switch>
+    </div>
+  </BrowserRouter>
+
 }
 
 export default App;
