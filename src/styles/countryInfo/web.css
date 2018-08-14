@@ -1,0 +1,10 @@
+.country-info-cover {
+    width: auto;
+    height: 100vh;
+    padding: 0;
+}
+
+.country-info-column {
+    float: left;
+    width: 50%;
+}

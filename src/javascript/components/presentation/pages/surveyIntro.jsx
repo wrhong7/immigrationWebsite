@@ -7,15 +7,15 @@ export  default function surveyIntro() {
   </div>;
 
   const surveyIntroSubCaptionTop = <div className="survey-intro-sub-caption-top">
-    We just need to do a cost -benefit analysis
+    We just need to get to know you a little better
   </div>;
 
-  const goToSurveyButton = <div className="survey-section-gotosurvey-button">
+  const goToSurveyButton = <div className="survey-section-gotosurvey-button hover-pointer">
     Show my options
   </div>;
 
   const surveyIntroSubCaptionBottom = <div className="survey-intro-subcaption-bottom">
-    After 10 questions, our alogrithims<br/>
+    After 10 questions, our algorithms<br/>
     will match you to the best country.
   </div>;
 

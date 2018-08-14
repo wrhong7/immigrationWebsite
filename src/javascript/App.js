@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import logo from '../resources/logo.svg';
 import '../styles/App.css';
+import MainContainer from './components/containers/mainContainer.jsx';
 
-import Landing from '../javascript/components/pages/landing';
-import ShortIntro from './components/pages/shortIntro';
-import SurveyIntro from '../javascript/components/pages/surveyIntro';
+import {Provider} from 'react-redux';
+import {applyMiddleware, createStore} from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers/index';
+
+function App() {
+
+  //using root reducer to create a store and apply middleware-thunk for async action creators;
+  const store = createStore(rootReducer, applyMiddleware(thunk));
 
 
-class App extends Component {
-  render() {
-    return <div>
-      <Landing/>
-      <ShortIntro/>
-      <SurveyIntro/>
-    </div>
-  }
+  return <Provider store={store}>
+    <MainContainer/>
+  </Provider>
 }
 
 export default App;

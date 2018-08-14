@@ -8,6 +8,7 @@
 .survey-intro-content-container {
     width: 50vw;
     margin-left: 25vw;
+    margin-top: 20vh;
     background-color: #ebf3f5;
     text-align: center;
 }
@@ -21,13 +22,22 @@
 
 
 .survey-intro-sub-caption-top {
-
+    margin-top: 2vmin;
+    color: #666666;
 }
 
 .survey-section-gotosurvey-button {
-
+    margin-top: 2vmin;
+    color: white;
+    background-color: #cf0205;
+    width: 30vmin;
+    padding: 2vmin;
+    margin-left: 32vmin;
+    border-radius: 1vmin;
 }
 
 .survey-intro-subcaption-bottom {
-
+    margin-top: 2vmin;
+    line-height: 5vmin;
+    color: #666666;
 }

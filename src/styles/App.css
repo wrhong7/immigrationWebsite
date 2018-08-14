@@ -1,6 +1,7 @@
 @import url(./shortIntro/web.css);
 @import url(./surveyIntro/web.css);
 @import url(./landingPage/web.css);
+@import url(./countryInfo/web.css);
 .App {
   text-align: center; }
 

@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function Landing () {
+export default function Landing (props) {
+
+  console.log(props);
 
   const about = <div className="landing-page-header-about-button header-button hover-pointer">
     About
@@ -19,6 +21,7 @@ export default function Landing () {
   </div>;
 
   const goToSurveyButton = <div className="go-to-survey-button hover-pointer">
+                                {/*onClick={() => handleButtonClick("TEST_ID")}>*/}
     Explore My Options
   </div>;
 
