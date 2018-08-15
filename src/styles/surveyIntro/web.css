@@ -22,14 +22,16 @@
 
 
 .survey-intro-sub-caption-top {
+    font-size: 2.5vmin;
     margin-top: 2vmin;
     color: #666666;
 }
 
 .survey-section-gotosurvey-button {
+    font-size: 2.5vmin;
     margin-top: 2vmin;
     color: white;
-    background-color: #cf0205;
+    background-color: #FF0808;
     width: 30vmin;
     padding: 2vmin;
     margin-left: 32vmin;
@@ -37,6 +39,7 @@
 }
 
 .survey-intro-subcaption-bottom {
+    font-size: 2.5vmin;
     margin-top: 2vmin;
     line-height: 5vmin;
     color: #666666;

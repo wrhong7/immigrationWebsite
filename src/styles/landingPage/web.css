@@ -14,6 +14,29 @@
     padding: 5vh;
 }
 
+.scroll-down-chevron {
+    text-align: center;
+    font-size: 4vmin;
+    color: #FF0808;
+    margin-top: 10vmin;
+}
+
+@keyframes chevron-animation {
+    0% {
+        margin-top: 10vmin;
+    }
+    50% {
+        margin-top: 11vmin;
+    }
+    100% {
+        margin-top: 10vmin;
+    }
+}
+
+.chevron-icon-animation {
+    animation: chevron-animation 2s infinite;
+}
+
 .landing-page-header {
     font-size: 3vmin;
     margin-right: 5vw;
@@ -30,8 +53,9 @@
 
 .header-button {
     float: right;
-    width: 8vw;
-    text-align: center;
+    width: auto;
+    margin: 0 1.5vmin;
+text-align: center;
 }
 
 .landing-page-intro-mainscript {
@@ -41,16 +65,18 @@
 
 .go-to-survey-button {
     width: 20vw;
+    font-size: 2.5vmin;
     margin-top: 3vmin;
     margin-left: 15vmin;
     margin-right: 3vmin;
     margin-bottom: 1.5vmin;
     padding: 2vmin;
     text-align: center;
-    background-color: #cf0205;
+    background-color: #FF0808;
     border-radius: 1vmin;
 }
 
 .landing-page-intro-astrix-explanation {
     margin-top: 6vmin;
+    font-size: 2.5vmin;
 }

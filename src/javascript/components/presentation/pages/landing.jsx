@@ -1,14 +1,22 @@
 import React from "react";
+import algorithms from "./algorithms";
 
 export default function Landing ({handleButtonClick}) {
 
-  const about = <div className="landing-page-header-about-button header-button hover-pointer">
+  const about = <a className="landing-page-header-about-button header-button hover-pointer hover-underline"
+                   href="/about">
     About
-  </div>;
+  </a>;
 
-  const disclaimer = <div className="landing-page-header-disclaimer-button header-button hover-pointer">
+  const algorithms = <a className="landing-page-header-algorithms-button header-button hover-pointer hover-underline"
+                        href="/algorithms">
+    Algorithms
+  </a>;
+
+  const disclaimer = <a className="landing-page-header-disclaimer-button header-button hover-pointer hover-underline"
+                        href="/disclaimer">
     Disclaimer
-  </div>;
+  </a>;
 
   const tips = <div className="landing-page-header-disclaimer-button header-button hover-pointer">
     Tips
@@ -27,14 +35,21 @@ export default function Landing ({handleButtonClick}) {
     *Bachelors Degree + 2 Years of Work Experience
   </div>;
 
+  const scrollDownBlinker = <div>
+    <i className="fas fa-chevron-down"></i>
+  </div>
+
   return <div className="landing-page-cover">
     <div className="landing-page-header">
-      {tips} {disclaimer} {about}
+      {disclaimer} {algorithms} {about}
     </div>
     <div className="landing-page-intro-section">
       {mainscript}
       {goToSurveyButton}
       {explanation}
+    </div>
+    <div className="scroll-down-chevron chevron-icon-animation">
+      {scrollDownBlinker}
     </div>
   </div>
 

@@ -8,6 +8,10 @@ import {Provider} from 'react-redux';
 import {applyMiddleware, createStore} from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
+import takeSurvey from "./components/presentation/pages/survey";
+import about from "./components/presentation/pages/about";
+import disclaimer from "./components/presentation/pages/disclaimer";
+import algorithms from "./components/presentation/pages/algorithms";
 
 function App() {
 
@@ -24,6 +28,10 @@ function App() {
     <div>
       <Switch>
         <Route exact path="/" component={goToLandingPage} />
+        <Route exact path="/about" component={about} />
+        <Route exact path="/algorithms" component={algorithms} />
+        <Route exact path="/disclaimer" component={disclaimer} />
+        <Route exact path="/survey" component={takeSurvey} />
       </Switch>
     </div>
   </BrowserRouter>
