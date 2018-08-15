@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04f928e8-49aa-4e13-99a5-e15ae03e1810" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/javascript/components/presentation/pages/about.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/javascript/components/presentation/pages/algorithms.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/javascript/components/presentation/pages/disclaimer.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/javascript/components/presentation/pages/survey.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javascript/App.js" afterPath="$PROJECT_DIR$/src/javascript/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javascript/components/presentation/pages/landing.jsx" afterPath="$PROJECT_DIR$/src/javascript/components/presentation/pages/landing.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/index.css" afterPath="$PROJECT_DIR$/src/styles/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/landingPage/web.css" afterPath="$PROJECT_DIR$/src/styles/landingPage/web.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/shortIntro/web.css" afterPath="$PROJECT_DIR$/src/styles/shortIntro/web.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/surveyIntro/web.css" afterPath="$PROJECT_DIR$/src/styles/surveyIntro/web.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javascript/components/presentation/pages/survey.jsx" afterPath="$PROJECT_DIR$/src/javascript/components/presentation/pages/survey.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -75,8 +64,8 @@
       <file leaf-file-name="survey.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javascript/components/presentation/pages/survey.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state relative-caret-position="125">
+              <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -216,7 +205,6 @@
         <option value="$PROJECT_DIR$/src/javascript/components/containers/mainContainer.jsx" />
         <option value="$PROJECT_DIR$/src/javascript/components/presentation/pages/surveyIntro.jsx" />
         <option value="$PROJECT_DIR$/src/javascript/components/presentation/main.jsx" />
-        <option value="$PROJECT_DIR$/src/javascript/components/presentation/pages/survey.jsx" />
         <option value="$PROJECT_DIR$/src/javascript/components/presentation/pages/about.jsx" />
         <option value="$PROJECT_DIR$/src/javascript/components/presentation/pages/algorithms.jsx" />
         <option value="$PROJECT_DIR$/src/javascript/components/presentation/pages/disclaimer.jsx" />
@@ -227,6 +215,7 @@
         <option value="$PROJECT_DIR$/src/javascript/components/presentation/pages/landing.jsx" />
         <option value="$PROJECT_DIR$/src/styles/index.css" />
         <option value="$PROJECT_DIR$/src/styles/landingPage/web.css" />
+        <option value="$PROJECT_DIR$/src/javascript/components/presentation/pages/survey.jsx" />
       </list>
     </option>
   </component>
@@ -248,7 +237,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="950" />
     <option name="width" value="980" />
     <option name="height" value="1090" />
@@ -412,15 +401,15 @@
       <option name="presentableId" value="Default" />
       <updated>1534109140162</updated>
       <workItem from="1534109142972" duration="7469000" />
-      <workItem from="1534130225009" duration="29252000" />
+      <workItem from="1534130225009" duration="29599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36721000" />
+    <option name="totallyTimeSpent" value="37068000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1102" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1102" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24791667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -779,8 +768,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javascript/components/presentation/pages/survey.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state relative-caret-position="125">
+          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding />
         </state>
       </provider>
