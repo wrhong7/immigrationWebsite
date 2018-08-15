@@ -1,0 +1,113 @@
+.take-survey-cover {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    position: absolute;
+}
+
+.take-survey-background-cover {
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("../../../src/images/survyBGImage.jpg");
+    background-size: cover;
+
+    padding: 0;
+    margin: 0;
+
+    z-index: -10;
+    position: absolute;
+}
+
+.take-survey-background-cover-color {
+    width: 100vw;
+    height: 100vh;
+
+    padding: 0;
+    margin: 0;
+
+    z-index: -5;
+    position: absolute;
+
+    background-color: rgba(0,0,0,0.7);
+}
+
+.survey-content {
+    color: white;
+    z-index: 5;
+    padding: 10vmin;
+    margin-top: 15vmin;
+    width: 85vw;
+}
+
+.survey-progress-indicator {
+    text-align: right;
+}
+
+.survey-questions {
+    margin: 3vmin 0 10vmin 0;
+    font-size: 4vmin;
+}
+
+.survey-responses {
+    width: auto;
+    overflow: auto;
+    font-size: 3vmin;
+    margin-left: 5vmin;
+    margin-top: 5vmin;
+}
+
+.survey-response-item {
+    font-size: 2vmin;
+    width: 12vw;
+    height: 12vw;
+    padding: 2vw;
+    border: solid 0.1vmin;
+    float: left;
+}
+
+.response-icon {
+    text-align: center;
+    font-size: 7vmin;
+    margin-bottom: 1vmin;
+}
+
+.response-topic {
+    font-size: 3vmin;
+    line-height: 4vmin;
+}
+
+.response-details {
+    font-size: 3vmin;
+    line-height: 4vmin;
+}
+
+.work-hour-box {
+    border: solid 0.1vmin;
+    padding: 2vmin;
+    width: 8vw;
+    height: 4vh;
+    text-align: center;
+    float: left;
+}
+
+.work-hour-box-describer {
+    float: left;
+    margin-top: 5vmin;
+    margin-left: 2vmin;
+    font-size: 2.5vmin;
+}
+
+.text-center-align {
+    text-align: center;
+}
+
+.response-icon-large {
+    text-align: center;
+    font-size: 10vmin;
+}
+
+.survey-subscript {
+    margin-top: 10vmin;
+    text-align: center;
+}

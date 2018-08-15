@@ -10,7 +10,12 @@ export  default function surveyIntro() {
     We just need to get to know you a little better
   </div>;
 
-  const goToSurveyButton = <div className="survey-section-gotosurvey-button hover-pointer">
+  const goToSurveyPage = () => {
+    window.location = "/survey";
+  }
+
+  const goToSurveyButton = <div className="survey-section-gotosurvey-button hover-pointer"
+                                onClick={goToSurveyPage}>
     Show my options
   </div>;
 
