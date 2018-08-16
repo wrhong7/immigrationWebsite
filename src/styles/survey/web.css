@@ -38,6 +38,7 @@
     padding: 10vmin;
     margin-top: 15vmin;
     width: 85vw;
+    min-height: 80vh;
 }
 
 .survey-progress-indicator {
@@ -64,6 +65,7 @@
     padding: 2vw;
     border: solid 0.1vmin;
     float: left;
+    cursor: pointer;
 }
 
 .response-icon {
@@ -110,4 +112,46 @@
 .survey-subscript {
     margin-top: 10vmin;
     text-align: center;
+}
+
+.survey-response-item-small {
+    width: 14vmin;
+    height: 14vmin;
+    padding: 4vmin;
+    float: left;
+    border: solid 0.1vmin;
+    cursor: pointer;
+}
+
+.response-icon-city {
+    width: 100%;
+    height: 10vmin;
+}
+
+.response-topic-small {
+    font-size: 2.5vmin;
+    margin-top: 1.5vmin;
+    text-align: center;
+}
+
+.bay-area-small-font {
+    width: 130%;
+    margin-left: -15%;
+}
+
+.insert-gap-between-questions {
+    margin-top: 20vmin;
+}
+
+.survey-response-hover-color-change {
+    background-color: rgba(255,255,255,0);
+}
+
+.survey-response-hover-color-change:hover {
+    background-color: rgba(255,255,255,0.3);
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
 }
