@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function takeSurvey() {
+export default function Survey({setQuestionOneAnswer}) {
 
   const surveyQuestionOne = <div className="survey-content">
       <div className="survey-progress-indicator">
@@ -10,7 +10,8 @@ export default function takeSurvey() {
         What would be your ideal life after 50 years old?
       </div>
       <div className="survey-responses">
-        <div className="survey-response-item survey-response-hover-color-change">
+        <div className="survey-response-item survey-response-hover-color-change"
+             onClick={() => setQuestionOneAnswer("Retire with Pension + Social Security Income")}>
           <div className="response-icon">
             <i className="fas fa-umbrella-beach"></i>
           </div>
@@ -22,7 +23,8 @@ export default function takeSurvey() {
           </div>
         </div>
 
-        <div className="survey-response-item survey-response-hover-color-change">
+        <div className="survey-response-item survey-response-hover-color-change"
+             onClick={() => setQuestionOneAnswer("Retire with Passive Investments Income")}>
           <div className="response-icon">
             <i className="fas fa-umbrella-beach"></i>
           </div>
@@ -34,7 +36,8 @@ export default function takeSurvey() {
           </div>
         </div>
 
-        <div className="survey-response-item survey-response-hover-color-change">
+        <div className="survey-response-item survey-response-hover-color-change"
+             onClick={() => setQuestionOneAnswer("Own Small or Medium Enterprises")}>
           <div className="response-icon">
             <i className="fas fa-store"></i>
           </div>
@@ -46,7 +49,8 @@ export default function takeSurvey() {
           </div>
         </div>
 
-        <div className="survey-response-item survey-response-hover-color-change">
+        <div className="survey-response-item survey-response-hover-color-change"
+             onClick={() => setQuestionOneAnswer("Become a Corporate C-Suite Executive")}>
           <div className="response-icon">
             <i className="fas fa-user-tie"></i>
           </div>
@@ -58,7 +62,8 @@ export default function takeSurvey() {
           </div>
         </div>
 
-        <div className="survey-response-item survey-response-hover-color-change">
+        <div className="survey-response-item survey-response-hover-color-change"
+             onClick={() => setQuestionOneAnswer("Maintain Middle Level Manager & Enjoy Life")}>
           <div className="response-icon">
             <i className="fas fa-briefcase"></i>
           </div>
@@ -66,11 +71,9 @@ export default function takeSurvey() {
             Maintain
           </div>
           <div className="response-details">
-            Middle Level<br/>Manager & <br/>Enjoy Life!
+            Middle Level<br/>Manager & <br/>Enjoy Life.
           </div>
         </div>
-
-
 
       </div>
     </div>;

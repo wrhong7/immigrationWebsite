@@ -1,5 +1,5 @@
 import React from "react";
-import LandingContainer from '../containers/landingContainer'
+import LandingContainer from '../containers/landingContainer';
 import ShortIntro from './pages/shortIntro';
 import SurveyIntro from './pages/surveyIntro';
 import AustraliaInfo from './pages/infoPerCountry/australia';
@@ -15,8 +15,6 @@ export default class Main extends React.Component {
       var element = document.getElementById(`${newProps.activeSectionId}`);
       element.scrollIntoView();
     }
-    // console.log("the received props are: ", newProps.activeSectionId);
-    // console.log("Main just received props!");
   }
 
   render() {
