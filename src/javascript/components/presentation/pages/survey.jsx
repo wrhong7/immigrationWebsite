@@ -612,6 +612,10 @@ export default function takeSurvey() {
     </div>
   </div>;
 
+  const submitSurveyButton = <div className="submitSurveyButton hover-pointer survey-response-hover-color-change">
+    See Result
+  </div>
+
   return <div>
 
     <div className="take-survey-cover">
@@ -622,6 +626,7 @@ export default function takeSurvey() {
       {surveyQuestionFive}
       {surveyQuestionSix}
       {surveyQuestionSeven}
+      {submitSurveyButton}
     </div>
 
     <div className="take-survey-background-cover">
