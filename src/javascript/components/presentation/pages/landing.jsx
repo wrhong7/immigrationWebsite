@@ -1,5 +1,5 @@
 import React from "react";
-import algorithms from "./algorithms";
+// import algorithms from "./algorithms";
 
 export default function Landing ({handleButtonClick}) {
 
@@ -17,10 +17,6 @@ export default function Landing ({handleButtonClick}) {
                         href="/disclaimer">
     Disclaimer
   </a>;
-
-  const tips = <div className="landing-page-header-disclaimer-button header-button hover-pointer">
-    Tips
-  </div>;
 
   const mainscript = <div className="landing-page-intro-mainscript">
     Immigration Tips<br/>For Skilled Workers*

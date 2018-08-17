@@ -24,3 +24,34 @@ export const setQuestionTwoAnswer = (res) => ({
   type: SET_QUESTION_TWO_ANSWER,
   payload: res,
 });
+
+export const setQuestionThreeAnswer = (res) => ({
+  type: SET_QUESTION_THREE_ANSWER,
+  payload: res,
+});
+
+export const setQuestionFourAnswer = (res) => ({
+  type: SET_QUESTION_FOUR_ANSWER,
+  payload: res,
+});
+
+export const setQuestionFiveAnswer = (res) => ({
+  type: SET_QUESTION_FIVE_ANSWER,
+  payload: res,
+});
+
+export const setQuestionSixAnswer = (res) => ({
+  type: SET_QUESTION_SIX_ANSWER,
+  payload: res,
+});
+
+export const setQuestionSevenPartOneAnswer = (res) => ({
+  type: SET_QUESTION_SEVEN_PART_ONE_ANSWER,
+  payload: res,
+});
+
+
+export const setQuestionSevenPartTwoAnswer = (res) => ({
+  type: SET_QUESTION_SEVEN_PART_TWO_ANSWER,
+  payload: res,
+});

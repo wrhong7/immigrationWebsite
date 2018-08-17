@@ -5,10 +5,10 @@ import SurveyIntro from './pages/surveyIntro';
 import AustraliaInfo from './pages/infoPerCountry/australia';
 
 export default class Main extends React.Component {
-
-  constructor(props){
-    super(props);
-  }
+  //
+  // constructor(props){
+  //   super(props);
+  // }
 
   componentWillReceiveProps(newProps) {
     if (this.props.activeSectionId !== newProps.activeSectionId) {

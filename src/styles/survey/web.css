@@ -143,10 +143,6 @@
     margin-top: 20vmin;
 }
 
-.survey-response-hover-color-change {
-    background-color: rgba(255,255,255,0);
-}
-
 .survey-response-hover-color-change:hover {
     background-color: rgba(255,255,255,0.3);
     -webkit-transition: 1s;
@@ -165,4 +161,12 @@
     width: 20vw;
     text-align: center;
     margin-left: 35vw;
+}
+
+.option-selected {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.option-unselected {
+    background-color: rgba(255,255,255,0) !important;
 }

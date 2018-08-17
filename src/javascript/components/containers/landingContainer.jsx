@@ -1,11 +1,11 @@
-import React from 'react';
+// import React from 'react';
 import {connect} from 'react-redux';
 import Landing from '../presentation/pages/landing';
 import * as actions from '../../actions/actionCreators';
 
-const mapStateToProps = state => {
-
-};
+// const mapStateToProps = state => {
+//
+// };
 
 const mapDispatchToProps = dispatch => ({
   handleButtonClick: (sectionId) => dispatch(actions.setActiveSectionId(sectionId)),

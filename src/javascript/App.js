@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+// import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import logo from '../resources/logo.svg';
+// import logo from '../resources/logo.svg';
 import '../styles/App.css';
 import MainContainer from './components/containers/mainContainer.jsx';
 
