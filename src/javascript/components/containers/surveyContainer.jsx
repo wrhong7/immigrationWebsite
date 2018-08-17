@@ -9,6 +9,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   setQuestionOneAnswer: (res) => dispatch(actions.setQuestionOneAnswer(res)),
+  setQuestionTwoAnswer: (res) => dispatch(actions.setQuestionTwoAnswer(res)),
 });
 
 export default connect(

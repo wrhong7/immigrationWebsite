@@ -19,3 +19,8 @@ export const setQuestionOneAnswer = (res) => ({
   type: SET_QUESTION_ONE_ANSWER,
   payload: res,
 });
+
+export const setQuestionTwoAnswer = (res) => ({
+  type: SET_QUESTION_TWO_ANSWER,
+  payload: res,
+});

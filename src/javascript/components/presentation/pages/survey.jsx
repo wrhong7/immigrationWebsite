@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Survey({setQuestionOneAnswer}) {
+export default function Survey({setQuestionOneAnswer, setQuestionTwoAnswer}) {
 
   const surveyQuestionOne = <div className="survey-content">
       <div className="survey-progress-indicator">
@@ -86,7 +86,8 @@ export default function Survey({setQuestionOneAnswer}) {
       Select item(s) you believe a government should provide.
     </div>
     <div className="survey-responses">
-      <div className="survey-response-item survey-response-hover-color-change">
+      <div className="survey-response-item survey-response-hover-color-change"
+           onClick={() => setQuestionTwoAnswer("Law & Order Enforcement")}>
         <div className="response-icon">
           <i class="fas fa-balance-scale"></i>
         </div>
@@ -98,7 +99,8 @@ export default function Survey({setQuestionOneAnswer}) {
         </div>
       </div>
 
-      <div className="survey-response-item survey-response-hover-color-change">
+      <div className="survey-response-item survey-response-hover-color-change"
+           onClick={() => setQuestionTwoAnswer("Basic Security Humanitarian Needs Only")}>
         <div className="response-icon">
           <i className="fas fa-utensils"></i>
         </div>
@@ -109,8 +111,6 @@ export default function Survey({setQuestionOneAnswer}) {
           Humanitarian <br/> Needs Only
         </div>
       </div>
-
-
 
       <div className="survey-response-item survey-response-hover-color-change">
         <div className="response-icon">
