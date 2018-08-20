@@ -8,6 +8,8 @@ import {
   SET_QUESTION_SIX_ANSWER,
   SET_QUESTION_SEVEN_PART_ONE_ANSWER,
   SET_QUESTION_SEVEN_PART_TWO_ANSWER,
+  SET_SINGLE_ANSWER,
+  SET_MULTIPLE_ANSWER,
 } from '../actions/actionConstants';
 
 import * as _ from "lodash";
@@ -37,10 +39,29 @@ const handleMultipleAnswerQuestions = (responseArray, response) => {
 
 };
 
+const handleSingleAnswer = (state, action) => {
+  let newState = Object.assign({}, state);
+  newState[action.data] = action.payload;
+  return newState;
+};
+
+const handleMultipleAnswer = (state, action) => {
+  let newState = Object.assign({}, state);
+  newState[action.data] = handleMultipleAnswerQuestions(state[action.data], action.payload);
+  console.log(newState);
+  return newState;
+};
+
+
 const main = (state = initialState, action) => {
   switch (action.type) {
+    case SET_SINGLE_ANSWER:
+      return handleSingleAnswer(state, action);
+    case SET_MULTIPLE_ANSWER:
+      return handleMultipleAnswer(state, action);
     case SET_ACTIVE_SECTION:
       return {...state, activeSectionId: action.payload};
+
     case SET_QUESTION_ONE_ANSWER:
       return {...state, questionOneAnswer: action.payload};
     case SET_QUESTION_TWO_ANSWER:
@@ -54,9 +75,15 @@ const main = (state = initialState, action) => {
     case SET_QUESTION_SIX_ANSWER:
       return {...state, questionSixAnswer: handleMultipleAnswerQuestions(state.questionSixAnswer, action.payload)};
     case SET_QUESTION_SEVEN_PART_ONE_ANSWER:
-      return {...state, questionSevenPartOneAnswer: handleMultipleAnswerQuestions(state.questionSevenPartOneAnswer, action.payload)};
+      return {
+        ...state,
+        questionSevenPartOneAnswer: handleMultipleAnswerQuestions(state.questionSevenPartOneAnswer, action.payload)
+      };
     case SET_QUESTION_SEVEN_PART_TWO_ANSWER:
-      return {...state, questionSevenPartTwoAnswer: handleMultipleAnswerQuestions(state.questionSevenPartTwoAnswer, action.payload)};
+      return {
+        ...state,
+        questionSevenPartTwoAnswer: handleMultipleAnswerQuestions(state.questionSevenPartTwoAnswer, action.payload)
+      };
     default:
       return state;
   }

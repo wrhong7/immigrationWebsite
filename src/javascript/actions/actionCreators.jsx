@@ -8,11 +8,25 @@ import {
   SET_QUESTION_SIX_ANSWER,
   SET_QUESTION_SEVEN_PART_ONE_ANSWER,
   SET_QUESTION_SEVEN_PART_TWO_ANSWER,
+  SET_SINGLE_ANSWER,
+  SET_MULTIPLE_ANSWER,
 } from './actionConstants';
 
 export const setActiveSectionId = (id) => ({
   type: SET_ACTIVE_SECTION,
   payload: id,
+});
+
+export const setSingleAnswer = (res, questionId) => ({
+  type: SET_SINGLE_ANSWER,
+  payload: res,
+  data: questionId,
+});
+
+export const setMultipleAnswer = (res, questionId) => ({
+  type: SET_MULTIPLE_ANSWER,
+  payload: res,
+  data: questionId,
 });
 
 export const setQuestionOneAnswer = (res) => ({
@@ -49,7 +63,6 @@ export const setQuestionSevenPartOneAnswer = (res) => ({
   type: SET_QUESTION_SEVEN_PART_ONE_ANSWER,
   payload: res,
 });
-
 
 export const setQuestionSevenPartTwoAnswer = (res) => ({
   type: SET_QUESTION_SEVEN_PART_TWO_ANSWER,
