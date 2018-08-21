@@ -6,6 +6,10 @@ import {
   SET_QUESTION_FOUR_ANSWER,
   SET_QUESTION_FIVE_ANSWER,
   SET_QUESTION_SIX_ANSWER,
+  SET_QUESTION_SIX_PART_ONE_ANSWER,
+  SET_QUESTION_SIX_PART_TWO_ANSWER,
+  SET_QUESTION_SIX_PART_THREE_ANSWER,
+  SET_QUESTION_SIX_PART_FOUR_ANSWER,
   SET_QUESTION_SEVEN_PART_ONE_ANSWER,
   SET_QUESTION_SEVEN_PART_TWO_ANSWER,
   SET_SINGLE_ANSWER,
@@ -22,6 +26,10 @@ const initialState = {
   questionFourAnswer: "",
   questionFiveAnswer: "",
   questionSixAnswer: "",
+  questionSixPartOneAnswer: "",
+  questionSixPartTwoAnswer: "",
+  questionSixPartThreeAnswer: "",
+  questionSixPartFourAnswer: "",
   questionSevenPartOneAnswer: "",
   questionSevenPartTwoAnswer: "",
 };
@@ -61,7 +69,6 @@ const main = (state = initialState, action) => {
       return handleMultipleAnswer(state, action);
     case SET_ACTIVE_SECTION:
       return {...state, activeSectionId: action.payload};
-
     case SET_QUESTION_ONE_ANSWER:
       return {...state, questionOneAnswer: action.payload};
     case SET_QUESTION_TWO_ANSWER:
@@ -74,6 +81,14 @@ const main = (state = initialState, action) => {
       return {...state, questionFiveAnswer: handleMultipleAnswerQuestions(state.questionFiveAnswer, action.payload)};
     case SET_QUESTION_SIX_ANSWER:
       return {...state, questionSixAnswer: handleMultipleAnswerQuestions(state.questionSixAnswer, action.payload)};
+    case SET_QUESTION_SIX_PART_ONE_ANSWER:
+      return {...state, questionSixPartOneAnswer: handleMultipleAnswerQuestions(state.questionSixPartOneAnswer, action.payload)};
+    case SET_QUESTION_SIX_PART_TWO_ANSWER:
+      return {...state, questionSixPartTwoAnswer: handleMultipleAnswerQuestions(state.questionSixPartTwoAnswer, action.payload)};
+    case SET_QUESTION_SIX_PART_THREE_ANSWER:
+      return {...state, questionSixPartThreeAnswer: handleMultipleAnswerQuestions(state.questionSixPartThreeAnswer, action.payload)};
+    case SET_QUESTION_SIX_PART_FOUR_ANSWER:
+      return {...state, questionSixPartFourAnswer: handleMultipleAnswerQuestions(state.questionSixPartFourAnswer, action.payload)};
     case SET_QUESTION_SEVEN_PART_ONE_ANSWER:
       return {
         ...state,
