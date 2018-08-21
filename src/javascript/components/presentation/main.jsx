@@ -17,14 +17,6 @@ export default class Main extends React.Component {
     }
   }
 
-  componentDidMount(props) {
-    console.log("hit")
-    const height = this.refs["survey-page-cover"].clientHeight;
-    console.log(height);
-
-    document.getElementById("survey-bar-width").style.width = "60%";
-  }
-
   render() {
     return <div>
       <LandingContainer/>

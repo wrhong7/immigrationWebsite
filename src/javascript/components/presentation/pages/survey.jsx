@@ -22,23 +22,13 @@ export default class Survey extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
   handleScroll(event) {
-    let scrollTop = event.srcElement.body.scrollTop,
-      itemTranslate = Math.min(0, scrollTop/3 - 60);
-
-    this.setState({
-      transform: itemTranslate
-    });
-
-    console.log("scrolled");
+    const height = document.getElementById("survey-page-cover").scrollHeight -
+      document.getElementById("survey-page-cover").clientHeight;
+    const scrolled = document.getElementById("survey-page-cover").scrollTop ||
+      document.getElementById("survey-page-cover").scrollTop;
+    const scrolledPercentage = (scrolled / height) * 100;
+    document.getElementById("survey-bar-width").style.width = scrolledPercentage + "%";
   }
 
   questionConstants() {
@@ -222,7 +212,7 @@ export default class Survey extends React.Component {
   }
 
   render() {
-    return <div>
+    return <div onScroll={this.handleScroll}>
 
       <div className="survey-progress-bar-container">
         <div className="survey-progress-bar" id="survey-bar-width"/>

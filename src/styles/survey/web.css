@@ -193,16 +193,15 @@
 
 .survey-progress-bar-container {
     width: 100vw;
-    height: 3vh;
+    height: 1vh;
     position: absolute;
-    z-index: 0;
-    background-color: yellow;
+    z-index: 1;
+    background-color: transparent;
 }
 
 .survey-progress-bar {
     position: absolute;
-    width: 30%;
-    height: 3vh;
-    background-color: blue;
-    z-index: 5;
+    width: 0%;
+    height: 2vh;
+    background-color: #00bcd4;
 }
