@@ -14,6 +14,7 @@ const mapStateToProps = state => ({
   questionSixPartTwoSelected: state.main.questionSixPartTwoAnswer,
   questionSixPartThreeSelected: state.main.questionSixPartThreeAnswer,
   questionSixPartFourSelected: state.main.questionSixPartFourAnswer,
+  questionSixPartFiveSelected: state.main.questionSixPartFiveAnswer,
   questionSevenPartOneSelected: state.main.questionSevenPartOneAnswer,
   questionSevenPartTwoSelected: state.main.questionSevenPartTwoAnswer,
 });
@@ -32,6 +33,7 @@ const mapDispatchToProps = dispatch => ({
   setQuestionSixPartTwoAnswer: (res) => dispatch(actions.setQuestionSixPartTwoAnswer(res)),
   setQuestionSixPartThreeAnswer: (res) => dispatch(actions.setQuestionSixPartThreeAnswer(res)),
   setQuestionSixPartFourAnswer: (res) => dispatch(actions.setQuestionSixPartFourAnswer(res)),
+  setQuestionSixPartFiveAnswer: (res) => dispatch(actions.setQuestionSixPartFiveAnswer(res)),
   setQuestionSevenPartOneAnswer: (res) => dispatch(actions.setQuestionSevenPartOneAnswer(res)),
   setQuestionSevenPartTwoAnswer: (res) => dispatch(actions.setQuestionSevenPartTwoAnswer(res)),
 });

@@ -10,6 +10,7 @@ import {
   SET_QUESTION_SIX_PART_TWO_ANSWER,
   SET_QUESTION_SIX_PART_THREE_ANSWER,
   SET_QUESTION_SIX_PART_FOUR_ANSWER,
+  SET_QUESTION_SIX_PART_FIVE_ANSWER,
   SET_QUESTION_SEVEN_PART_ONE_ANSWER,
   SET_QUESTION_SEVEN_PART_TWO_ANSWER,
   SET_SINGLE_ANSWER,
@@ -30,6 +31,7 @@ const initialState = {
   questionSixPartTwoAnswer: "",
   questionSixPartThreeAnswer: "",
   questionSixPartFourAnswer: "",
+  questionSixPartFiveAnswer: "",
   questionSevenPartOneAnswer: "",
   questionSevenPartTwoAnswer: "",
 };
@@ -50,6 +52,7 @@ const handleMultipleAnswerQuestions = (responseArray, response) => {
 const handleSingleAnswer = (state, action) => {
   let newState = Object.assign({}, state);
   newState[action.data] = action.payload;
+  console.log(newState);
   return newState;
 };
 
@@ -59,7 +62,6 @@ const handleMultipleAnswer = (state, action) => {
   console.log(newState);
   return newState;
 };
-
 
 const main = (state = initialState, action) => {
   switch (action.type) {
@@ -86,19 +88,15 @@ const main = (state = initialState, action) => {
     case SET_QUESTION_SIX_PART_TWO_ANSWER:
       return {...state, questionSixPartTwoAnswer: handleMultipleAnswerQuestions(state.questionSixPartTwoAnswer, action.payload)};
     case SET_QUESTION_SIX_PART_THREE_ANSWER:
-      return {...state, questionSixPartThreeAnswer: handleMultipleAnswerQuestions(state.questionSixPartThreeAnswer, action.payload)};
+      return {...state, questionSixPartThreeAnswer: action.payload};
     case SET_QUESTION_SIX_PART_FOUR_ANSWER:
       return {...state, questionSixPartFourAnswer: handleMultipleAnswerQuestions(state.questionSixPartFourAnswer, action.payload)};
+    case SET_QUESTION_SIX_PART_FIVE_ANSWER:
+      return {...state, questionSixPartFiveAnswer: handleMultipleAnswerQuestions(state.questionSixPartFiveAnswer, action.payload)};
     case SET_QUESTION_SEVEN_PART_ONE_ANSWER:
-      return {
-        ...state,
-        questionSevenPartOneAnswer: handleMultipleAnswerQuestions(state.questionSevenPartOneAnswer, action.payload)
-      };
+      return {...state, questionSevenPartOneAnswer: handleMultipleAnswerQuestions(state.questionSevenPartOneAnswer, action.payload)};
     case SET_QUESTION_SEVEN_PART_TWO_ANSWER:
-      return {
-        ...state,
-        questionSevenPartTwoAnswer: handleMultipleAnswerQuestions(state.questionSevenPartTwoAnswer, action.payload)
-      };
+      return {...state, questionSevenPartTwoAnswer: handleMultipleAnswerQuestions(state.questionSevenPartTwoAnswer, action.payload)};
     default:
       return state;
   }

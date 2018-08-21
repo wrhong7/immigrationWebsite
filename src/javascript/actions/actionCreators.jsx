@@ -10,6 +10,7 @@ import {
   SET_QUESTION_SIX_PART_TWO_ANSWER,
   SET_QUESTION_SIX_PART_THREE_ANSWER,
   SET_QUESTION_SIX_PART_FOUR_ANSWER,
+  SET_QUESTION_SIX_PART_FIVE_ANSWER,
   SET_QUESTION_SEVEN_PART_ONE_ANSWER,
   SET_QUESTION_SEVEN_PART_TWO_ANSWER,
   SET_SINGLE_ANSWER,
@@ -80,6 +81,11 @@ export const setQuestionSixPartThreeAnswer = (res) => ({
 
 export const setQuestionSixPartFourAnswer = (res) => ({
   type: SET_QUESTION_SIX_PART_FOUR_ANSWER,
+  payload: res,
+});
+
+export const setQuestionSixPartFiveAnswer = (res) => ({
+  type: SET_QUESTION_SIX_PART_FIVE_ANSWER,
   payload: res,
 });
 
