@@ -13,23 +13,27 @@ import {
   answer6part5,
   answer7part1,
   answer7part2,
-  questionConstants
-} from '../../../../constants/surveyConstants';
+  questionConstants,
+} from '../../../../constants/surveyQuestions';
+import SurveyResult from "../SurveyResult";
 
 export default class Survey extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleScroll = this.handleScroll.bind(this);
+  };
+
+  updateProgressBar(divId, width) {
+    document.getElementById(divId).style.width = width + "%";
   }
 
   handleScroll(event) {
-    const height = document.getElementById("survey-page-cover").scrollHeight -
-      document.getElementById("survey-page-cover").clientHeight;
-    const scrolled = document.getElementById("survey-page-cover").scrollTop ||
-      document.getElementById("survey-page-cover").scrollTop;
+    const height = document.getElementById("survey-page-cover").scrollHeight - document.getElementById("survey-page-cover").clientHeight;
+    const scrolled = document.getElementById("survey-page-cover").scrollTop || document.getElementById("survey-page-cover").scrollTop;
     const scrolledPercentage = (scrolled / height) * 100;
-    document.getElementById("survey-bar-width").style.width = scrolledPercentage + "%";
-  }
+    this.updateProgressBar("survey-bar-width", scrolledPercentage);
+  };
 
   questionConstants() {
     const {questionOneSelected, questionTwoSelected, questionThreeSelected, questionFourSelected, questionFiveSelected, questionSixPartOneSelected, questionSixPartTwoSelected, questionSixPartThreeSelected, questionSixPartFourSelected, questionSixPartFiveSelected, questionSevenPartOneSelected, questionSevenPartTwoSelected, setSingleAnswer, setMultipleAnswer} = this.props;
@@ -108,7 +112,8 @@ export default class Survey extends React.Component {
         func: () => answer7part2.map((item, index) => this.getOption(item, index, "questionSevenPartTwoAnswer", questionSevenPartTwoSelected, setMultipleAnswer, "response-icon-small", "response-topic")),
       },
     ];
-  }
+  };
+
   //Five Options Standard Survey
   getSurveyClassNameTypeOne(collection, item) {
     return `${_.includes(collection, item) ? "option-selected" : "option-unselected"} 
@@ -125,18 +130,11 @@ export default class Survey extends React.Component {
     survey-response-item-small survey-response-hover-color-change`;
   };
 
-  getProgressBar() {
-    // var pageHeight = document.getElementById("survey-page-cover").offsetHeight;
-    // console.log(pageHeight);
-  };
-
   getOption({icon, text, responseSelector}, index, questionSelector, questionSelected, cb, divClassNameOne, divClassNameTwo) {
-
     const {questionSevenPartTwoSelected} = this.props;
 
     if (divClassNameOne === "response-icon") {
-      this.getProgressBar();
-      return <div key={`question-one-${index}`}>
+      return <div key={`${questionSelector}-${index}`}>
         <div className={this.getSurveyClassNameTypeOne(questionSelected, responseSelector)}
              onClick={() => cb(responseSelector, questionSelector)}>
           <div className={divClassNameOne}>
@@ -150,7 +148,7 @@ export default class Survey extends React.Component {
     }
 
     if (divClassNameOne === "response-icon-small") {
-      return <div>
+      return <div key={`${questionSelector}-${index}`}>
         <div className={this.getSurveyClassNameTypeThree(questionSevenPartTwoSelected, responseSelector)}
              onClick={() => cb(responseSelector, questionSelector)}>
           <div className={divClassNameOne}>
@@ -165,8 +163,8 @@ export default class Survey extends React.Component {
     }
 
     if (divClassNameOne === "response-eight-options") {
-      return <div>
-        <div key={`question-one-${index}`}
+      return <div key={`${questionSelector}-${index}`}>
+        <div key={`${questionSelector}-${index}`}
              className={this.getSurveyClassNameTypeTwo(questionSelected, responseSelector)}
              onClick={() => cb(responseSelector, questionSelector)}>
           <div className="response-icon-large">
@@ -183,14 +181,14 @@ export default class Survey extends React.Component {
 
   showSpouseQuestion(questionSixPartThreeSelected) {
     return (questionSixPartThreeSelected === "Q6Part3Option2") ? "survey-spouse-question-show" : "survey-spouse-question-hide";
-  }
+  };
 
   renderQuestion({name, question, func}, index) {
 
     const {questionSixPartThreeSelected} = this.props;
 
     return <div
-      key={`question-${index}`}
+      key={`${question}-${index}`}
       className={`survey-content ${(name === "Question 6 Part 4" || name === "Question 6 Part 5") ?
         this.showSpouseQuestion(questionSixPartThreeSelected) : ""}`}>
       <div className="survey-progress-indicator">
@@ -206,10 +204,14 @@ export default class Survey extends React.Component {
   };
 
   submitSurveyButton() {
-    return <div className="submitSurveyButton hover-pointer survey-response-hover-color-change">
+    console.log(this.props);
+    return <div
+      className="submitSurveyButton hover-pointer survey-response-hover-color-change"
+      onClick={() => this.props.submitSurvey(this.props)}
+    >
       See Result
     </div>;
-  }
+  };
 
   render() {
     return <div onScroll={this.handleScroll}>
@@ -220,7 +222,8 @@ export default class Survey extends React.Component {
 
       <div className="take-survey-cover" id="survey-page-cover">
         {this.questionConstants().map((item, index) => this.renderQuestion(item, index))}
-        {this.submitSurveyButton}
+        {this.submitSurveyButton()}
+        {this.props.isSurveySubmitted && <SurveyResult country={this.props.country}/>}
       </div>
 
       <div className="take-survey-background-cover"/>

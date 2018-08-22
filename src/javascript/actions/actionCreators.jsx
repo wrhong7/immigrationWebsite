@@ -15,11 +15,17 @@ import {
   SET_QUESTION_SEVEN_PART_TWO_ANSWER,
   SET_SINGLE_ANSWER,
   SET_MULTIPLE_ANSWER,
+  SUBMIT_SURVEY,
 } from './actionConstants';
 
 export const setActiveSectionId = (id) => ({
   type: SET_ACTIVE_SECTION,
   payload: id,
+});
+
+export const submitSurvey = (surveyDetails) => ({
+  type: SUBMIT_SURVEY,
+  payload: surveyDetails,
 });
 
 export const setSingleAnswer = (res, questionId) => ({
