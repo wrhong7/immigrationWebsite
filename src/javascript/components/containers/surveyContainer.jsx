@@ -24,9 +24,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   setSingleAnswer: (res, questionId) => dispatch(actions.setSingleAnswer(res, questionId)),
   setMultipleAnswer: (res, questionId) => dispatch(actions.setMultipleAnswer(res, questionId)),
-
   submitSurvey: (data) => dispatch(actions.submitSurvey(data)),
-
   setQuestionOneAnswer: (res) => dispatch(actions.setQuestionOneAnswer(res)),
   setQuestionTwoAnswer: (res) => dispatch(actions.setQuestionTwoAnswer(res)),
   setQuestionThreeAnswer: (res) => dispatch(actions.setQuestionThreeAnswer(res)),

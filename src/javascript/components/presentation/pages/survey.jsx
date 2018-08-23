@@ -15,7 +15,7 @@ import {
   answer7part2,
   questionConstants,
 } from '../../../../constants/surveyQuestions';
-import SurveyResult from "../SurveyResult";
+import SurveyResult from "../surveyResult";
 
 export default class Survey extends React.Component {
 
@@ -203,11 +203,44 @@ export default class Survey extends React.Component {
     </div>;
   };
 
+  getUserChoices() {
+    const {
+      questionOneSelected,
+      questionTwoSelected,
+      questionThreeSelected,
+      questionFourSelected,
+      questionFiveSelected,
+      questionSixSelected,
+      questionSixPartOneSelected,
+      questionSixPartTwoSelected,
+      questionSixPartThreeSelected,
+      questionSixPartFourSelected,
+      questionSixPartFiveSelected,
+      questionSevenPartOneSelected,
+      questionSevenPartTwoSelected
+    } = this.props;
+
+    return {
+      questionOneSelected,
+      questionTwoSelected,
+      questionThreeSelected,
+      questionFourSelected,
+      questionFiveSelected,
+      questionSixSelected,
+      questionSixPartOneSelected,
+      questionSixPartTwoSelected,
+      questionSixPartThreeSelected,
+      questionSixPartFourSelected,
+      questionSixPartFiveSelected,
+      questionSevenPartOneSelected,
+      questionSevenPartTwoSelected
+    };
+  }
+
   submitSurveyButton() {
-    console.log(this.props);
     return <div
       className="submitSurveyButton hover-pointer survey-response-hover-color-change"
-      onClick={() => this.props.submitSurvey(this.props)}
+      onClick={() => this.props.submitSurvey(this.getUserChoices())}
     >
       See Result
     </div>;
