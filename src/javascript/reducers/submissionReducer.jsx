@@ -8,55 +8,56 @@ import {
 
 const initialState = {
   isSurveySubmitted: false,
-  country: '',
+  careerLifePreferenceScore: 10,
+  riskPreferenceScore: 20,
 };
 
-const getScoreSingleResponse = (algorithmWeightObject, userResponseValue) => {
-  console.log(algorithmWeightObject);
-  console.log(userResponseValue);
-  console.log(algorithmWeightObject[userResponseValue]);
-
-
-
+const getScoreSingleResponse = (algorithmWeightObject, questionId, userResponseValue) => {
+  if (userResponseValue !== "") {
+    return algorithmWeightObject[questionId][userResponseValue];
+  }
 };
 
-const getScoreMultipleResponse = (algorithmWeightObject, userResponse) => {
-  const responseArray = algorithmWeightObject[userResponse];
-  // responseArray.map((response) => {
-  //
-  // })
+const getScoreMultipleResponse = (algorithmWeightObject, questionId, userResponseValueArray) => {
+  let careerLifePreferenceScore = 0;
+  let riskPreferenceScore = 0;
+  userResponseValueArray.map((userResponseValue) => {
+    careerLifePreferenceScore += algorithmWeightObject[questionId][userResponseValue][0];
+    riskPreferenceScore += algorithmWeightObject[questionId][userResponseValue][1];
+  });
+  return [careerLifePreferenceScore, riskPreferenceScore];
 };
 
 const handleSubmitSurvey = (state, action) => {
   const userValueObject = action.payload;
   const userValueObjectKeys = Object.keys(userValueObject);
-  userValueObjectKeys.map((item) => {
-    const userResponseValue = userValueObject[item];
-    const careerLifePreferenceScore = (typeof userValueObject[item] === "string") ?
-      getScoreSingleResponse(responsePreferenceWeights, userResponseValue) :
-      getScoreMultipleResponse(responsePreferenceWeights, userResponseValue);
-    return careerLifePreferenceScore;
-  });
-
-  // console.log(Object.keys(userEnteredSurveyValues));
-
   const newState = Object.assign({}, state);
 
-  // console.log("this is response weights", responsePreferenceWeights);
-  newState["careerLifePreferenceScore"] = 0;
-  newState["riskPreferenceScore"] = 0;
+  userValueObjectKeys.map((item) => {
+    const userResponseValue = userValueObject[item];
 
+    console.log(item);
 
-  newState["country"] = "canada";
+    if (userResponseValue !== "") {
+      const careerLifePreferenceScore = (typeof userValueObject[item] === "string") ?
+        getScoreSingleResponse(responsePreferenceWeights, item, userResponseValue) :
+        getScoreMultipleResponse(responsePreferenceWeights, item, userResponseValue);
+
+      console.log(item, careerLifePreferenceScore);
+      newState["careerLifePreferenceScore"] += careerLifePreferenceScore[0];
+      newState["riskPreferenceScore"] += careerLifePreferenceScore[1];
+    }
+  });
   newState["isSurveySubmitted"] = true;
-  // console.log(newState);
   return newState;
 };
 
 const submission = (state = initialState, action) => {
   switch (action.type) {
     case SUBMIT_SURVEY:
-      return handleSubmitSurvey(state, action);
+      let updatedState =  handleSubmitSurvey(state, action);
+      console.log("UPDATED AFTER SUBMISSION", updatedState);
+      return updatedState;
     default:
       return state;
   }

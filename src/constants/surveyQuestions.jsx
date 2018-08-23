@@ -243,17 +243,17 @@ export const answer6part4 = [
   {
     icon: "fas fa-graduation-cap",
     text: "Bachelor's Degree",
-    responseSelector: "Q6Part1Option1",
+    responseSelector: "Q6Part4Option1",
   },
   {
     icon: "fas fa-user-graduate",
     text: "Master's Degree",
-    responseSelector: "Q6Part1Option2",
+    responseSelector: "Q6Part4Option2",
   },
   {
     icon: "fas fa-university",
     text: "Doctorate Degree",
-    responseSelector: "Q6Part1Option3",
+    responseSelector: "Q6Part4Option3",
   },
 ];
 
@@ -261,32 +261,32 @@ export const answer6part5 = [
   {
     icon: "fas fa-dice-one",
     text: <span>1-2 Years of<br/>Work<br/>Experience</span>,
-    responseSelector: "Q6Part2Option1",
+    responseSelector: "Q6Part5Option1",
   },
   {
     icon: "fas fa-dice-two",
     text: <span>2-3 Years of<br/>Work<br/>Experience</span>,
-    responseSelector: "Q6Part2Option2",
+    responseSelector: "Q6Part5Option2",
   },
   {
     icon: "fas fa-dice-three",
     text: <span>3-5 Years of<br/>Work<br/>Experience</span>,
-    responseSelector: "Q6Part2Option3",
+    responseSelector: "Q6Part5Option3",
   },
   {
     icon: "fas fa-dice-five",
     text: <span>5+ Years of<br/>Work<br/>Experience</span>,
-    responseSelector: "Q6Part2Option4",
+    responseSelector: "Q6Part5Option4",
   },
   {
     icon: "fas fa-flask",
     text: <span>Multiple<br/>Science<br/>Publications</span>,
-    responseSelector: "Q6Part2Option5",
+    responseSelector: "Q6Part5Option5",
   },
   {
     icon: "fas fa-globe-americas",
     text: <span>Fluency in<br/>English</span>,
-    responseSelector: "Q6Part2Option6",
+    responseSelector: "Q6Part5Option6",
   },
   {
     icon: "fas fa-globe-africa",

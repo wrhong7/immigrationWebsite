@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const responsePreferenceWeights = {
-  question1: {
+  questionOneSelected: {
     constants: [0, 0],
     Q1Option1: [5, -10],
     Q1Option2: [10, -5],
@@ -9,7 +9,7 @@ export const responsePreferenceWeights = {
     Q1Option4: [-10, 5],
     Q1Option5: [-5, 0],
   },
-  question2: {
+  questionTwoSelected: {
     constants: [10, 10],
     Q2Option1: [0, 0],
     Q2Option2: [0, 0],
@@ -22,7 +22,7 @@ export const responsePreferenceWeights = {
     Q2Option9: [0, -4.5],
     Q2Option10: [0, -2],
   },
-  question3: {
+  questionThreeSelected: {
     constants: [0, 0],
     Q3Option1: [10, -10],
     Q3Option2: [5, -5],
@@ -30,7 +30,7 @@ export const responsePreferenceWeights = {
     Q3Option4: [-5, 5],
     Q3Option5: [-10, 10],
   },
-  question4: {
+  questionFourSelected: {
     constants: [0, 10],
     Q4Option1: [0, -2],
     Q4Option2: [0, -2],
@@ -38,7 +38,7 @@ export const responsePreferenceWeights = {
     Q4Option4: [0, -2],
     Q4Option5: [0, -2],
   },
-  question5: {
+  questionFiveSelected: {
     constants: [0, 0],
     Q5Option1: [0, 0],
     Q5Option2: [0, -5],
@@ -46,13 +46,13 @@ export const responsePreferenceWeights = {
     Q5Option4: [0, 5],
     Q5Option5: [0, 0],
   },
-  question6Part1: {
+  questionSixPartOneSelected: {
     constants: [0, 0],
     Q6Part1Option1: [0, 0],
     Q6Part1Option2: [0, 0],
     Q6Part1Option3: [0, 0],
   },
-  question6Part2: {
+  questionSixPartTwoSelected: {
     constants: [0, 0],
     Q6Part2Option1: [0, 0],
     Q6Part2Option2: [0, 0],
@@ -63,18 +63,18 @@ export const responsePreferenceWeights = {
     Q6Part2Option7: [0, 0],
     Q6Part2Option8: [0, 0],
   },
-  question6Part3: {
+  questionSixPartThreeSelected: {
     constants: [0, 0],
     Q6Part3Option1: [0, 0],
     Q6Part3Option2: [0, 0],
   },
-  question6Part4: {
+  questionSixPartFourSelected: {
     constants: [0, 0],
     Q6Part4Option1: [0, 0],
     Q6Part4Option2: [0, 0],
     Q6Part4Option3: [0, 0],
   },
-  question6Part5: {
+  questionSixPartFiveSelected: {
     constants: [0, 0],
     Q6Part5Option1: [0, 0],
     Q6Part5Option2: [0, 0],
@@ -85,7 +85,7 @@ export const responsePreferenceWeights = {
     Q6Part5Option7: [0, 0],
     Q6Part5Option8: [0, 0],
   },
-  question7Part1: {
+  questionSevenPartOneSelected: {
     constants: [0, 0],
     Q7Part1Option1: [-5, -5],
     Q7Part1Option2: [-3, -5],
@@ -93,7 +93,7 @@ export const responsePreferenceWeights = {
     Q7Part1Option4: [5, -5],
     Q7Part1Option5: [-5, 10],
   },
-  question7Part2: {
+  questionSevenPartTwoSelected: {
     constants: [0, 0],
     Q7Part2Option1: [2.5, 0],
     Q7Part2Option2: [1, 0],
