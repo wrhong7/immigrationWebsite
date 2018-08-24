@@ -15,7 +15,7 @@ import {
   answer7part2,
   questionConstants,
 } from '../../../../constants/surveyQuestions';
-import SurveyResult from "../surveyResult";
+import SurveyResultContainer from "../../containers/surveyResultContainer";
 
 export default class Survey extends React.Component {
 
@@ -256,7 +256,7 @@ export default class Survey extends React.Component {
       <div className="take-survey-cover" id="survey-page-cover">
         {this.questionConstants().map((item, index) => this.renderQuestion(item, index))}
         {this.submitSurveyButton()}
-        {this.props.isSurveySubmitted && <SurveyResult country={this.props.country}/>}
+        {this.props.isSurveySubmitted && <SurveyResultContainer/>}
       </div>
 
       <div className="take-survey-background-cover"/>

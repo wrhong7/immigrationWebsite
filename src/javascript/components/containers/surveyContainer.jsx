@@ -18,7 +18,6 @@ const mapStateToProps = state => ({
   questionSevenPartOneSelected: state.main.questionSevenPartOneAnswer,
   questionSevenPartTwoSelected: state.main.questionSevenPartTwoAnswer,
   isSurveySubmitted: state.submission.isSurveySubmitted,
-  country: state.submission.country,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,5 +1,6 @@
 import React from 'react';
 
 export default function SurveyResult(props) {
-  return <div>TIHS IS THE RESULT: {props.country}</div>;
+  console.log("INSIDE SURVEY RES", props);
+  return <div>Thise IS THE RESULT: </div>;
 }

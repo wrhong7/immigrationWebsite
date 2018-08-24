@@ -130,8 +130,6 @@ const handleSubmitSurvey = (state, action) => {
   newState["unitedStatesScore"] += eligibilityScore[7];
   newState["isSurveySubmitted"] += true;
 
-  console.log(newState);
-
   return newState;
 };
 
@@ -139,7 +137,6 @@ const submission = (state = initialState, action) => {
   switch (action.type) {
     case SUBMIT_SURVEY:
       let updatedState = handleSubmitSurvey(state, action);
-      console.log("UPDATED AFTER SUBMISSION", updatedState);
       return updatedState;
     default:
       return state;
