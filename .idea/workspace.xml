@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04f928e8-49aa-4e13-99a5-e15ae03e1810" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx" afterPath="$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx" afterPath="$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -62,15 +61,19 @@
       <file leaf-file-name="submissionReducer.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="73" column="117" lean-forward="false" selection-start-line="73" selection-start-column="117" selection-end-line="73" selection-end-column="117" />
+            <state relative-caret-position="550">
+              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding>
-                <element signature="e#431#922#0" expanded="false" />
-                <element signature="e#982#2080#0" expanded="false" />
-                <element signature="e#1265#1598#0" expanded="false" />
-                <element signature="e#2209#2942#0" expanded="false" />
-                <element signature="e#4408#4514#0" expanded="false" />
-                <element signature="e#5250#5289#0" expanded="false" />
+                <element signature="e#434#925#0" expanded="false" />
+                <element signature="e#985#2083#0" expanded="false" />
+                <element signature="e#1268#1601#0" expanded="false" />
+                <element signature="e#2212#2945#0" expanded="false" />
+                <element signature="e#3033#3937#0" expanded="false" />
+                <element signature="e#4336#4442#0" expanded="false" />
+                <element signature="e#4557#4921#0" expanded="false" />
+                <element signature="e#4970#6291#0" expanded="false" />
+                <element signature="e#5178#5217#0" expanded="false" />
+                <element signature="e#5341#5878#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -164,7 +167,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>30</find>
       <find>setQuestionTwoAnswer</find>
       <find>response-topic-small</find>
       <find>Q7Option2</find>
@@ -194,6 +196,7 @@
       <find>careerLifePreferenceScore</find>
       <find>surveyDetails</find>
       <find>getScoreMultipleResponse</find>
+      <find>getEligi</find>
     </findStrings>
     <replaceStrings>
       <replace>getSurveyClassNameTypeOne</replace>
@@ -444,12 +447,12 @@
       <workItem from="1534636922213" duration="4000" />
       <workItem from="1534706760729" duration="39920000" />
       <workItem from="1534951073642" duration="13030000" />
-      <workItem from="1535035423524" duration="22914000" />
+      <workItem from="1535035423524" duration="24051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154108000" />
+    <option name="totallyTimeSpent" value="155245000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1102" extended-state="6" />
@@ -943,15 +946,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="73" column="117" lean-forward="false" selection-start-line="73" selection-start-column="117" selection-end-line="73" selection-end-column="117" />
+        <state relative-caret-position="550">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
-            <element signature="e#431#922#0" expanded="false" />
-            <element signature="e#982#2080#0" expanded="false" />
-            <element signature="e#1265#1598#0" expanded="false" />
-            <element signature="e#2209#2942#0" expanded="false" />
-            <element signature="e#4408#4514#0" expanded="false" />
-            <element signature="e#5250#5289#0" expanded="false" />
+            <element signature="e#434#925#0" expanded="false" />
+            <element signature="e#985#2083#0" expanded="false" />
+            <element signature="e#1268#1601#0" expanded="false" />
+            <element signature="e#2212#2945#0" expanded="false" />
+            <element signature="e#3033#3937#0" expanded="false" />
+            <element signature="e#4336#4442#0" expanded="false" />
+            <element signature="e#4557#4921#0" expanded="false" />
+            <element signature="e#4970#6291#0" expanded="false" />
+            <element signature="e#5178#5217#0" expanded="false" />
+            <element signature="e#5341#5878#0" expanded="false" />
           </folding>
         </state>
       </provider>

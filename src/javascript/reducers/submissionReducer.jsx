@@ -10,8 +10,8 @@ const initialState = {
   isSurveySubmitted: false,
   careerLifePreferenceScore: 10,
   riskPreferenceScore: 20,
-  australiaScore: 0,
-  canadaScore: 0,
+  australiaScore: 30,
+  canadaScore: 110,
   irelandScore: 0,
   newZealandScore: 0,
   unitedKingdomScore: 0,
@@ -78,7 +78,6 @@ const getEligibilityScore = (allUserAnswers, algorithmWeightObject, maritalStatu
     }
   });
   (maritalStatus === "married") ? updatedEligibilityScoreToReturn.splice(3, 1) : updatedEligibilityScoreToReturn.splice(4, 1);
-  console.log("updated score to return", updatedEligibilityScoreToReturn);
   return updatedEligibilityScoreToReturn;
 };
 
@@ -111,7 +110,6 @@ const handleSubmitSurvey = (state, action) => {
     flipDegrees(userValueObject);
   };
   let eligibilityScore = checkIfMarried(userValueObject, responsePreferenceWeights);
-  console.log("ELIGIBILITY SCORE", eligibilityScore);
 
   userValueObjectKeys.map((item) => {
     let userResponseValue = userValueObject[item];
@@ -123,7 +121,17 @@ const handleSubmitSurvey = (state, action) => {
       newState["riskPreferenceScore"] += careerLifePreferenceScore[1];
     }
   });
-  newState["isSurveySubmitted"] = true;
+
+  newState["australiaScore"] += eligibilityScore[2];
+  newState["canadaScore"] += eligibilityScore[3];
+  newState["irelandScore"] += eligibilityScore[4];
+  newState["newZealandScore"] += eligibilityScore[5];
+  newState["unitedKingdomScore"] += eligibilityScore[6];
+  newState["unitedStatesScore"] += eligibilityScore[7];
+  newState["isSurveySubmitted"] += true;
+
+  console.log(newState);
+
   return newState;
 };
 
