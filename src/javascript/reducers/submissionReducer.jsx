@@ -20,7 +20,7 @@ const initialState = {
 
 const flipDegrees = (userValueObject) => {
   //need to flip degrees between principal applicant and spouse in case spouse is better educated than the princial;
-  if (userValueObject["questionSixPartFourSelected"] === "Q6Part4Option2" ) {
+  if (userValueObject["questionSixPartFourSelected"] === "Q6Part4Option2") {
     userValueObject["questionSixPartOneSelected"] = "Q6Part1Option2";
   }
   if (userValueObject["questionSixPartFourSelected"] === "Q6Part4Option3") {
@@ -33,10 +33,10 @@ const checkIfSpouseHasHigherScore = (userValueObject) => {
   //check if this person has a spouse
   if (userValueObject["questionSixPartThreeSelected"] === "Q6Part3Option2" && userValueObject["questionSixPartOneSelected"] === "Q6Part1Option1"
     && (userValueObject["questionSixPartFourSelected"] === "Q6Part4Option2" || "Q6Part4Option3")) {
-      console.log("his wife has a higher degree");
-      //this means the applicant is married. the person only has a bachelor's degree. spouse has a master's degree.
-      //for the best benefit, we need to flip the degree between the spouse and the principal applicant since spouse
-      // will have a higher score.
+    console.log("his wife has a higher degree");
+    //this means the applicant is married. the person only has a bachelor's degree. spouse has a master's degree.
+    //for the best benefit, we need to flip the degree between the spouse and the principal applicant since spouse
+    // will have a higher score.
     return true;
   }
   //we need to flip the principal applicant and spouse (dependent) if the dependent's scores are higher:
@@ -47,19 +47,45 @@ const checkIfSpouseHasHigherScore = (userValueObject) => {
   // since if you can navigate to this page, that means you speak a decent english
 };
 
-const determineCanadaScore = (allUserAnswers, algorithmWeightObject, questionId, userResponseValueArray, userResponseValue) => {
+const addEligibilityScoreForMultipleResponse = (allUserAnswers, algorithmWeightObject, questionId, userResponseValueArray) => {
+  let eligibilityScore = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-  //this function is used to determine the proper canadian immigration score per the relationship status;
-  //fyi, canada uses different scoring mechanism for single vs married couple;
+  userResponseValueArray.map((userResponseValue) => {
+    eligibilityScore[2] += algorithmWeightObject[questionId][userResponseValue][2];
+    eligibilityScore[3] += algorithmWeightObject[questionId][userResponseValue][3];
+    eligibilityScore[4] += algorithmWeightObject[questionId][userResponseValue][4];
+    eligibilityScore[5] += algorithmWeightObject[questionId][userResponseValue][5];
+    eligibilityScore[6] += algorithmWeightObject[questionId][userResponseValue][6];
+    eligibilityScore[7] += algorithmWeightObject[questionId][userResponseValue][7];
+    eligibilityScore[8] += algorithmWeightObject[questionId][userResponseValue][8];
+  });
+  return eligibilityScore;
+}
 
-  // if (userResponseValue["questionSixPartOneAnswer"] === "Q6Part2Option1") {
-  //   console.log("PA's education level is", userResponseValue["questionSixPartOneAnswer"]["Q6Part2Option"]);
-  // }
-
-  console.log("triggered 1");
-  console.log(userResponseValue);
-
+const getEligibilityScore = (allUserAnswers, algorithmWeightObject, maritalStatus) => {
+  let updatedEligibilityScoreToReturn = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let eligibilityScore = [];
+  let userKeys = Object.keys(allUserAnswers);
+  userKeys.map((questionId) => {
+    let userResponseValue = allUserAnswers[questionId];
+    if (userResponseValue !== "") {
+      eligibilityScore = (typeof allUserAnswers[questionId] === "string") ?
+        getScoreSingleResponse(allUserAnswers, algorithmWeightObject, questionId, userResponseValue) :
+        addEligibilityScoreForMultipleResponse(allUserAnswers, algorithmWeightObject, questionId, userResponseValue);
+      updatedEligibilityScoreToReturn.map(function (number, index) {
+        updatedEligibilityScoreToReturn[index] += eligibilityScore[index];
+      });
+    }
+  });
+  (maritalStatus === "married") ? updatedEligibilityScoreToReturn.splice(3, 1) : updatedEligibilityScoreToReturn.splice(4, 1);
+  console.log("updated score to return", updatedEligibilityScoreToReturn);
+  return updatedEligibilityScoreToReturn;
 };
+
+const checkIfMarried = (allUserAnswers, algorithmWeightObject) =>
+  (allUserAnswers["questionSixPartThreeSelected"] === "Q6Part3Option2") ?
+    getEligibilityScore(allUserAnswers, algorithmWeightObject, "married") :
+    getEligibilityScore(allUserAnswers, algorithmWeightObject, "single");
 
 const getScoreSingleResponse = (allUserAnswers, algorithmWeightObject, questionId, userResponseValue) => {
   if (userResponseValue !== "") {
@@ -70,28 +96,9 @@ const getScoreSingleResponse = (allUserAnswers, algorithmWeightObject, questionI
 const getScoreMultipleResponse = (allUserAnswers, algorithmWeightObject, questionId, userResponseValueArray) => {
   let careerLifePreferenceScore = 0;
   let riskPreferenceScore = 0;
-  let australiaScore = 0;
-  let canadaScore = 0;
-  let irelandScore = 0;
-  let newZealandScore = 0;
-  let unitedKingdomScore = 0;
-  let unitedStatesScore = 0;
   userResponseValueArray.map((userResponseValue) => {
-
-    console.log(userResponseValue);
-
     careerLifePreferenceScore += algorithmWeightObject[questionId][userResponseValue][0];
     riskPreferenceScore += algorithmWeightObject[questionId][userResponseValue][1];
-
-    australiaScore += algorithmWeightObject[questionId][userResponseValue][2];
-
-    //here needs to enter the canada score logic unit function for
-    determineCanadaScore(allUserAnswers, algorithmWeightObject, questionId, userResponseValueArray, userResponseValue);
-
-    irelandScore += algorithmWeightObject[questionId][userResponseValue][5];
-    newZealandScore += algorithmWeightObject[questionId][userResponseValue][6];
-    unitedKingdomScore += algorithmWeightObject[questionId][userResponseValue][7];
-    unitedStatesScore += algorithmWeightObject[questionId][userResponseValue][8];
   });
   return [careerLifePreferenceScore, riskPreferenceScore];
 };
@@ -100,18 +107,18 @@ const handleSubmitSurvey = (state, action) => {
   let userValueObject = action.payload;
   const userValueObjectKeys = Object.keys(userValueObject);
   const newState = Object.assign({}, state);
-
   if (checkIfSpouseHasHigherScore(userValueObject) === true) {
     flipDegrees(userValueObject);
-  }
+  };
+  let eligibilityScore = checkIfMarried(userValueObject, responsePreferenceWeights);
+  console.log("ELIGIBILITY SCORE", eligibilityScore);
 
   userValueObjectKeys.map((item) => {
-    const userResponseValue = userValueObject[item];
+    let userResponseValue = userValueObject[item];
     if (userResponseValue !== "") {
       const careerLifePreferenceScore = (typeof userValueObject[item] === "string") ?
         getScoreSingleResponse(userValueObject, responsePreferenceWeights, item, userResponseValue) :
         getScoreMultipleResponse(userValueObject, responsePreferenceWeights, item, userResponseValue);
-
       newState["careerLifePreferenceScore"] += careerLifePreferenceScore[0];
       newState["riskPreferenceScore"] += careerLifePreferenceScore[1];
     }
@@ -123,7 +130,7 @@ const handleSubmitSurvey = (state, action) => {
 const submission = (state = initialState, action) => {
   switch (action.type) {
     case SUBMIT_SURVEY:
-      let updatedState =  handleSubmitSurvey(state, action);
+      let updatedState = handleSubmitSurvey(state, action);
       console.log("UPDATED AFTER SUBMISSION", updatedState);
       return updatedState;
     default:
