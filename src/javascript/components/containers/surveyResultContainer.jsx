@@ -1,7 +1,7 @@
 // import React from 'react';
 import {connect} from 'react-redux';
 import Main from '../presentation/main';
-import SurveyResult from "../presentation/surveyResult";
+import SurveyResult from "../presentation/pages/surveyResult";
 
 const mapStateToProps = state => state.submission;
 

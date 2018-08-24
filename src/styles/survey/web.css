@@ -205,3 +205,9 @@
     height: 2vh;
     background-color: #00bcd4;
 }
+
+.test-line-chart {
+    width: 80vw;
+    height: 50vh;
+    margin-left: 10vw;
+}
