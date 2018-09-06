@@ -3,7 +3,6 @@ import React from 'react';
 export const responsePreferenceWeights = {
   //Score Weights are in following arrays
   //[Career vs. Life Score, Risk Averse vs. Risk Prefer Score, AUS, CAN (without spouse), CAN (with spouse), Ireland, NZ, UK, US (Immigration Eligibility Scores]
-
   questionOneSelected: {
     Q1Option1: [5, -10, 0, 0, 0, 0, 0, 0, 0],
     Q1Option2: [10, -5, 0, 0, 0, 0, 0, 0, 0],
@@ -103,3 +102,83 @@ export const responsePreferenceWeights = {
   },
 };
 
+export const preferenceScorePerCountry = {
+  ausPrefScore: {
+    "Career": 9.14,
+    "Life": 9.23,
+    "riskAverse": 9.99,
+    "riskTaking": 0.86,
+    "industryPref": {
+      "corporate": 9.27,
+      "finance": 9.21,
+      "healthcare": 9.31,
+      "software": 9.38,
+      "self-employed": 9.52,
+    }
+  },
+  canPrefScore: {
+    "Career": 8.27,
+    "Life": 9.19,
+    "riskAverse": 9.4,
+    "riskTaking": 0.92,
+    "industryPref": {
+      "corporate": 9.48,
+      "finance": 9.49,
+      "healthcare": 9.24,
+      "software": 9.10,
+      "self-employed": 9.65,
+    }
+  },
+  irePrefScore: {
+    "Career": 7.37,
+    "Life": 9.27,
+    "riskAverse": 9.7,
+    "riskTaking": 0.89,
+    "industryPref": {
+      "corporate": 8.47,
+      "finance": 9.05,
+      "healthcare": 8.92,
+      "software": 9.57,
+      "self-employed": 9.23,
+    }
+  },
+  nzPrefScore: {
+    "Career": 7.34,
+    "Life": 8.22,
+    "riskAverse": 9.4,
+    "riskTaking": 0.92,
+    "industryPref": {
+      "corporate": 9.99,
+      "finance": 9.80,
+      "healthcare": 9.80,
+      "software": 9.14,
+      "self-employed": 9.15,
+    }
+  },
+  ukPrefScore: {
+    "Career": 9.85,
+    "Life": 9.56,
+    "riskAverse": 8.8,
+    "riskTaking": 0.98,
+    "industryPref": {
+      "corporate": 9.6,
+      "finance": 9.33,
+      "healthcare": 9.03,
+      "software": 9.45,
+      "self-employed": 9.25,
+    }
+  },
+  usPrefScore: {
+    "Career": 9.60,
+    "Life": 6.44,
+    "riskAverse": 8.7,
+    "riskTaking": 0.99,
+    "industryPref": {
+      "corporate": 9.15,
+      "finance": 9.45,
+      "healthcare": 9.31,
+      "software": 9.19,
+      "self-employed": 9.75,
+    }
+  },
+};

@@ -141,6 +141,10 @@ const handleSubmitSurvey = (state, action) => {
   return newState;
 };
 
+const calcPrefScoresPerCountry = (state, action) => {
+
+};
+
 const submission = (state = initialState, action) => {
   switch (action.type) {
     case SUBMIT_SURVEY:

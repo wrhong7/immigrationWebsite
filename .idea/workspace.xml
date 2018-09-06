@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04f928e8-49aa-4e13-99a5-e15ae03e1810" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx" afterPath="$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx" afterPath="$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -64,29 +66,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="submissionReducer.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="submissionReducer.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1100">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="125">
+              <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
               <folding>
-                <element signature="e#0#62#0" expanded="true" />
                 <element signature="e#1027#1518#0" expanded="false" />
                 <element signature="e#1578#2676#0" expanded="false" />
                 <element signature="e#2805#3538#0" expanded="false" />
                 <element signature="e#3626#4530#0" expanded="false" />
                 <element signature="e#4929#5035#0" expanded="false" />
+                <element signature="e#5150#5514#0" expanded="false" />
+                <element signature="e#5563#7205#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="surveyAlgorithms.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="surveyAlgorithms.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-209">
-              <caret line="68" column="49" lean-forward="true" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
-              <folding />
+            <state relative-caret-position="150">
+              <caret line="151" column="22" lean-forward="true" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
+              <folding>
+                <element signature="e#298#533#0" expanded="false" />
+                <element signature="e#558#1020#0" expanded="false" />
+                <element signature="e#1047#1280#0" expanded="false" />
+                <element signature="e#1306#1536#0" expanded="false" />
+                <element signature="e#1562#1788#0" expanded="false" />
+                <element signature="e#1820#1987#0" expanded="false" />
+                <element signature="e#2019#2448#0" expanded="false" />
+                <element signature="e#2482#2585#0" expanded="false" />
+                <element signature="e#2618#2772#0" expanded="false" />
+                <element signature="e#2805#3219#0" expanded="false" />
+                <element signature="e#3253#3511#0" expanded="false" />
+                <element signature="e#3545#4264#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -256,8 +272,8 @@
         <option value="$PROJECT_DIR$/src/styles/survey/web.css" />
         <option value="$PROJECT_DIR$/src/javascript/components/presentation/pages/surveyResult.jsx" />
         <option value="$PROJECT_DIR$/src/javascript/components/presentation/pages/survey.jsx" />
-        <option value="$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx" />
         <option value="$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx" />
+        <option value="$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx" />
       </list>
     </option>
   </component>
@@ -280,7 +296,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
+    <option name="x" value="950" />
     <option name="width" value="980" />
     <option name="height" value="1090" />
   </component>
@@ -446,18 +462,18 @@
       <workItem from="1535203094468" duration="1344000" />
       <workItem from="1535688663377" duration="599000" />
       <workItem from="1536183725767" duration="2993000" />
-      <workItem from="1536189619066" duration="6470000" />
+      <workItem from="1536189619066" duration="10421000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170849000" />
+    <option name="totallyTimeSpent" value="174800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1102" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55636746" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -484,7 +500,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="73" />
+      <option name="time" value="74" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -810,32 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javascript/components/presentation/pages/surveyIntro.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-159">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-209">
-          <caret line="68" column="49" lean-forward="true" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javascript/components/presentation/pages/surveyResult.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javascript/components/presentation/pages/survey.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-59">
@@ -870,17 +860,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/javascript/components/presentation/pages/surveyResult.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1100">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="125">
+          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
           <folding>
-            <element signature="e#0#62#0" expanded="true" />
             <element signature="e#1027#1518#0" expanded="false" />
             <element signature="e#1578#2676#0" expanded="false" />
             <element signature="e#2805#3538#0" expanded="false" />
             <element signature="e#3626#4530#0" expanded="false" />
             <element signature="e#4929#5035#0" expanded="false" />
+            <element signature="e#5150#5514#0" expanded="false" />
+            <element signature="e#5563#7205#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javascript/components/presentation/pages/surveyIntro.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-159">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="151" column="22" lean-forward="true" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
+          <folding>
+            <element signature="e#298#533#0" expanded="false" />
+            <element signature="e#558#1020#0" expanded="false" />
+            <element signature="e#1047#1280#0" expanded="false" />
+            <element signature="e#1306#1536#0" expanded="false" />
+            <element signature="e#1562#1788#0" expanded="false" />
+            <element signature="e#1820#1987#0" expanded="false" />
+            <element signature="e#2019#2448#0" expanded="false" />
+            <element signature="e#2482#2585#0" expanded="false" />
+            <element signature="e#2618#2772#0" expanded="false" />
+            <element signature="e#2805#3219#0" expanded="false" />
+            <element signature="e#3253#3511#0" expanded="false" />
+            <element signature="e#3545#4264#0" expanded="false" />
           </folding>
         </state>
       </provider>
