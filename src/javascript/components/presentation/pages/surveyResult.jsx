@@ -2,8 +2,6 @@ import React from "react";
 import { Bar, Chart, Axis, Series, Tooltip, Cursor, Line } from "react-charts";
 
 export default function SurveyResult(props) {
-  console.log("INSIDE SURVEY RES", props);
-
   const lineChart = (
     <Chart dark
       data={[
@@ -38,10 +36,12 @@ export default function SurveyResult(props) {
     </Chart>
   );
 
-
-  return <div>Thise IS THE RESULT:
-    <div className="test-line-chart">
-      {lineChart}
+  return <div>This is the result:
+    <div className="result-page-cover">
+      <div className="result-chart-area">
+        {lineChart}
+        {console.log(props)}
+      </div>
     </div>
   </div>;
 }

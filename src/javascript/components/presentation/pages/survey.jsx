@@ -246,6 +246,17 @@ export default class Survey extends React.Component {
     </div>;
   };
 
+  displayAfterSurveySubmit() {
+    return <div>
+      <div className="submitSurveyButton hover-pointer survey-response-hover-color-change">
+        Redo Testing
+      </div>
+      <div className="submitSurveyButton hover-pointer survey-response-hover-color-change">
+        Perform Calculation
+      </div>
+    </div>
+  }
+
   render() {
     return <div onScroll={this.handleScroll}>
 
@@ -255,7 +266,7 @@ export default class Survey extends React.Component {
 
       <div className="take-survey-cover" id="survey-page-cover">
         {this.questionConstants().map((item, index) => this.renderQuestion(item, index))}
-        {this.submitSurveyButton()}
+        {this.props.isSurveySubmitted === false ? this.submitSurveyButton() : this.displayAfterSurveySubmit()}
         {this.props.isSurveySubmitted && <SurveyResultContainer/>}
       </div>
 

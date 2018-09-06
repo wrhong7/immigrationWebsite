@@ -137,6 +137,25 @@ const submission = (state = initialState, action) => {
   switch (action.type) {
     case SUBMIT_SURVEY:
       let updatedState = handleSubmitSurvey(state, action);
+      // console.log(updatedState);
+
+      //here we need to restructure the updatedState to d3 readable format and let surveyResult.jsx
+      // to present the drawing
+
+      //here we need to add a function that takes in risk and careerLife scores and map the scores accordingly.
+      //if the risk is a minus value, we will rank based on risk averse countries.
+      //if the risk is a positive value, we will rank based on risk taking counries.
+      //if the career-life is a minus value, we will rank based on career emphasizing countries.
+      //if the career-life is a positive value, we will rank based on life emphasizing countries.
+
+      //per eligibility, if someone meets the eligibility, we will use 100%.
+      //per eligibility, if someone meets the criteria only after the job sponsorship,
+      //we will use 60% if someone can get PR in 2 years--Case of Australia, Canada, Ireland, and New Zealand.
+      //we will use 40% if someone can get PR in 5 years--Case of United Kingdom.
+      //we will use 20% if someone can get PR in undefined timeline.
+      //We will use 100% if someone has high academic publication volume.
+
+
       return updatedState;
     default:
       return state;

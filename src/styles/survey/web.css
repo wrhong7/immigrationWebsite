@@ -202,8 +202,15 @@
     background-color: #00bcd4;
 }
 
-.test-line-chart {
+.result-page-cover {
     width: 80vw;
-    height: 50vh;
-    margin-left: 10vw;
+    height: 90vh;
+    margin-left: 5vw;
 }
+
+.result-chart-area {
+    margin: 10%;
+    width: 80%;
+    height: 80%;
+}
+
