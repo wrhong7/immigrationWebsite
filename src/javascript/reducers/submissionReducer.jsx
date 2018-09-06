@@ -10,12 +10,13 @@ const initialState = {
   isSurveySubmitted: false,
   careerLifePreferenceScore: 10,
   riskPreferenceScore: 20,
-  australiaScore: 30,
-  canadaScore: 110,
-  irelandScore: 0,
-  newZealandScore: 0,
-  unitedKingdomScore: 0,
-  unitedStatesScore: 0,
+  surveyResults: {
+    industryPreference: [["Australia", 0], ["Canada", 0], ["Ireland", 0], ["New Zealand", 0], ["United Kingdom", 0], ["United States", 0]],
+    cityPreference: [["Australia", 0], ["Canada", 0], ["Ireland", 0], ["New Zealand", 0], ["United Kingdom", 0], ["United States", 0]],
+    riskPreference: [["Australia", 20], ["Canada", 20], ["Ireland", 20], ["New Zealand", 20], ["United Kingdom", 20], ["United States", 20]],
+    careerLifePreference: [["Australia", 10], ["Canada", 10], ["Ireland", 10], ["New Zealand", 10], ["United Kingdom",10], ["United States", 10]],
+    eligibility: [["Australia", 30], ["Canada", 110], ["Ireland", 0], ["New Zealand", 0], ["United Kingdom", 0], ["United States", 0]],
+  },
 };
 
 const flipDegrees = (userValueObject) => {
@@ -122,14 +123,21 @@ const handleSubmitSurvey = (state, action) => {
     }
   });
 
-  newState["australiaScore"] += eligibilityScore[2];
-  newState["canadaScore"] += eligibilityScore[3];
-  newState["irelandScore"] += eligibilityScore[4];
-  newState["newZealandScore"] += eligibilityScore[5];
-  newState["unitedKingdomScore"] += eligibilityScore[6];
-  newState["unitedStatesScore"] += eligibilityScore[7];
-  newState["isSurveySubmitted"] += true;
-
+  let eligibilityScoreUpdate = newState["surveyResults"]["eligibility"];
+  //updates australia eligibility score
+  eligibilityScoreUpdate[0][1] += eligibilityScore[2];
+  //updates canada eligibility score
+  eligibilityScoreUpdate[1][1] += eligibilityScore[3];
+  //updates ireland eligibility score
+  eligibilityScoreUpdate[2][1] += eligibilityScore[4];
+  //updates australia eligibility score
+  eligibilityScoreUpdate[3][1] += eligibilityScore[5];
+  //updates canada eligibility score
+  eligibilityScoreUpdate[4][1] += eligibilityScore[6];
+  //updates ireland eligibility score
+  eligibilityScoreUpdate[5][1] += eligibilityScore[7];
+  //updates survey submission status
+  newState["isSurveySubmitted"] = true;
   return newState;
 };
 
@@ -141,8 +149,6 @@ const submission = (state = initialState, action) => {
 
       //here we need to restructure the updatedState to d3 readable format and let surveyResult.jsx
       //to present the drawing
-
-      
 
       //here we need to add a function that takes in risk and careerLife scores and map the scores accordingly.
       //if the risk is a minus value, we will rank based on risk averse countries.
