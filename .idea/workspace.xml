@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04f928e8-49aa-4e13-99a5-e15ae03e1810" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx" afterPath="$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javascript/components/presentation/pages/survey.jsx" afterPath="$PROJECT_DIR$/src/javascript/components/presentation/pages/survey.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javascript/components/presentation/pages/surveyResult.jsx" afterPath="$PROJECT_DIR$/src/javascript/components/presentation/pages/surveyResult.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx" afterPath="$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/survey/web.css" afterPath="$PROJECT_DIR$/src/styles/survey/web.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -73,10 +68,16 @@
       <file leaf-file-name="submissionReducer.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="145" column="50" lean-forward="true" selection-start-line="145" selection-start-column="50" selection-end-line="145" selection-end-column="50" />
+            <state relative-caret-position="445">
+              <caret line="144" column="6" lean-forward="false" selection-start-line="144" selection-start-column="6" selection-end-line="144" selection-end-column="6" />
               <folding>
                 <element signature="e#0#62#0" expanded="true" />
+                <element signature="e#434#925#0" expanded="false" />
+                <element signature="e#985#2083#0" expanded="false" />
+                <element signature="e#2212#2945#0" expanded="false" />
+                <element signature="e#3033#3937#0" expanded="false" />
+                <element signature="e#4336#4442#0" expanded="false" />
+                <element signature="e#4970#6265#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -255,8 +256,8 @@
         <option value="$PROJECT_DIR$/src/styles/survey/web.css" />
         <option value="$PROJECT_DIR$/src/javascript/components/presentation/pages/surveyResult.jsx" />
         <option value="$PROJECT_DIR$/src/javascript/components/presentation/pages/survey.jsx" />
-        <option value="$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx" />
         <option value="$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx" />
+        <option value="$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx" />
       </list>
     </option>
   </component>
@@ -445,12 +446,12 @@
       <workItem from="1535203094468" duration="1344000" />
       <workItem from="1535688663377" duration="599000" />
       <workItem from="1536183725767" duration="2993000" />
-      <workItem from="1536189619066" duration="1309000" />
+      <workItem from="1536189619066" duration="3904000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165688000" />
+    <option name="totallyTimeSpent" value="168283000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1102" extended-state="6" />
@@ -848,6 +849,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-230">
+          <caret line="68" column="49" lean-forward="true" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/javascript/components/presentation/pages/surveyResult.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -859,20 +868,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/constants/surveyAlgorithms.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-230">
-          <caret line="68" column="49" lean-forward="true" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javascript/reducers/submissionReducer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="145" column="50" lean-forward="true" selection-start-line="145" selection-start-column="50" selection-end-line="145" selection-end-column="50" />
+        <state relative-caret-position="445">
+          <caret line="144" column="6" lean-forward="false" selection-start-line="144" selection-start-column="6" selection-end-line="144" selection-end-column="6" />
           <folding>
             <element signature="e#0#62#0" expanded="true" />
+            <element signature="e#434#925#0" expanded="false" />
+            <element signature="e#985#2083#0" expanded="false" />
+            <element signature="e#2212#2945#0" expanded="false" />
+            <element signature="e#3033#3937#0" expanded="false" />
+            <element signature="e#4336#4442#0" expanded="false" />
+            <element signature="e#4970#6265#0" expanded="false" />
           </folding>
         </state>
       </provider>
