@@ -17,6 +17,28 @@ const initialState = {
     careerLifePreference: [["Australia", 10], ["Canada", 10], ["Ireland", 10], ["New Zealand", 10], ["United Kingdom",10], ["United States", 10]],
     eligibility: [["Australia", 30], ["Canada", 110], ["Ireland", 0], ["New Zealand", 0], ["United Kingdom", 0], ["United States", 0]],
   },
+  surveyDataOutputForIllustration:[
+    {
+      label: "Eligibility",
+      data: [["Australia", 1], ["Canada", 2], ["Ireland", 4], ["New Zealand", 2], ["United Kingdom", 7], ["United States", 7]],
+    },
+    {
+      label: "Career & Life",
+      data: [["Australia", 3], ["Canada", 1], ["Ireland", 5], ["New Zealand", 6], ["United Kingdom", 4], ["United States", 7]],
+    },
+    {
+      label: "Risk Profile",
+      data: [["Australia", 9], ["Canada", 2], ["Ireland", 10], ["New Zealand", 12], ["United Kingdom", 7], ["United States", 7]],
+    },
+    {
+      label: "City Preference",
+      data: [["Australia", 1], ["Canada", 2], ["Ireland", 4], ["New Zealand", 2], ["United Kingdom", 7], ["United States", 7]],
+    },
+    {
+      label: "Industry Preference",
+      data: [["Australia", 3], ["Canada", 1], ["Ireland", 5], ["New Zealand", 6], ["United Kingdom", 4], ["United States", 7]],
+    }
+  ]
 };
 
 const flipDegrees = (userValueObject) => {
@@ -148,6 +170,123 @@ const updatePreferenceScore = (propState, preferenceScorePerCountry) => {
 };
 
 const updateIndustryScore = (propState, preferenceScorePerCountry, userChoices) => {
+  let countryKeys = Object.keys(preferenceScorePerCountry);
+  let industryPrefScoreToUpdate =
+    [["Australia", 0], ["Canada", 0], ["Ireland", 0],
+      ["New Zealand", 0], ["United Kingdom", 0], ["United States", 0]];
+
+  userChoices.map((userSelection)=> {
+    console.log(userSelection);
+    var counter = 0;
+    countryKeys.map((countryValue) => {
+      console.log(countryValue);
+
+      switch(userSelection) {
+        case "Q7Part1Option1":
+          var industryPrefScore = preferenceScorePerCountry[countryValue]["industryPref"]["finance"];
+          industryPrefScoreToUpdate[counter][1] += industryPrefScore;
+          break;
+        case "Q7Part1Option2":
+          var industryPrefScore = preferenceScorePerCountry[countryValue]["industryPref"]["corporate"];
+          industryPrefScoreToUpdate[counter][1] += industryPrefScore;
+          break;
+        case "Q7Part1Option3":
+          var industryPrefScore = preferenceScorePerCountry[countryValue]["industryPref"]["healthcare"];
+          industryPrefScoreToUpdate[counter][1] += industryPrefScore;
+          break;
+        case "Q7Part1Option4":
+          var industryPrefScore = preferenceScorePerCountry[countryValue]["industryPref"]["software"];
+          industryPrefScoreToUpdate[counter][1] += industryPrefScore;
+          break;
+        case "Q7Part1Option5":
+          var industryPrefScore = preferenceScorePerCountry[countryValue]["industryPref"]["self-employed"];
+          industryPrefScoreToUpdate[counter][1] += industryPrefScore;
+          break;
+        default:
+          industryPrefScoreToUpdate;
+      }
+      counter += 1;
+    });
+  });
+
+  let userChoicesResponseArrayLength = userChoices.length;
+  console.log(userChoicesResponseArrayLength);
+  industryPrefScoreToUpdate.map((score) => {
+    score[1] = score[1]/userChoicesResponseArrayLength;
+  });
+
+  console.log(industryPrefScoreToUpdate);
+
+  propState["surveyResults"]["industryPreference"] = industryPrefScoreToUpdate;
+
+  console.log(propState);
+
+  return propState;
+
+};
+
+const transformDataForIllustration = (propState) => {
+  let oldData = propState["surveyResults"];
+  let oldDataDictKeys = Object.keys(oldData);
+  let newData = [];
+  oldDataDictKeys.map((key) => {
+    switch (key) {
+      case "industryPreference":
+        newData.push(
+          {
+            label: "Industry Preference",
+            data: propState["surveyResults"]["industryPreference"],
+          }
+        );
+        break;
+      case "cityPreference":
+        newData.push(
+          {
+            label: "City Preference",
+            data: propState["surveyResults"]["cityPreference"],
+          }
+        );
+        break;
+      case "riskPreference":
+        newData.push(
+          {
+            label: "Risk Appetite",
+            data: propState["surveyResults"]["riskPreference"],
+          }
+        );
+        break;
+      case "careerLifePreference":
+        newData.push(
+          {
+            label: "Work Life Balance",
+            data: propState["surveyResults"]["careerLifePreference"],
+          }
+        );
+        break;
+      case "eligibility":
+        newData.push(
+          {
+            label: "Eligibility",
+            data: propState["surveyResults"]["eligibility"],
+          }
+        );
+        break;
+    }
+  });
+  propState["surveyDataOutputForIllustration"] = newData;
+  return(propState);
+};
+
+const eligibilityValueAdjustment = (propState) => {
+  // propState["surveyResults"][eligibility];
+  //for Canada, if the score goes beyond 430 points, it's 10.
+  //for Australia, if score goes beyond 70, it's 10.
+  //per eligibility, if someone meets the criteria only after the job sponsorship,
+  //we will use 60% if someone can get PR in 2 years--Case of Australia, Canada, Ireland, and New Zealand.
+  //we will use 40% if someone can get PR in 5 years--Case of United Kingdom.
+  //we will use 20% if someone can get PR in undefined timeline.
+  //We will use 100% if someone has high academic publication volume.
+
 
 };
 
@@ -172,8 +311,12 @@ const handleSubmitSurvey = (state, action) => {
   updateEligibilityScore(newState, eligibilityScore);
   updatePreferenceScore(newState, preferenceScorePerCountry);
   updateIndustryScore(newState, preferenceScorePerCountry, userValueObject["questionSevenPartOneSelected"]);
+  eligibilityValueAdjustment(newState);
+  transformDataForIllustration(newState);
   return newState;
 };
+
+
 
 const submission = (state = initialState, action) => {
   switch (action.type) {
@@ -197,6 +340,7 @@ const submission = (state = initialState, action) => {
       //we will use 20% if someone can get PR in undefined timeline.
       //We will use 100% if someone has high academic publication volume.
 
+      console.log(updatedState);
       return updatedState;
     default:
       return state;
