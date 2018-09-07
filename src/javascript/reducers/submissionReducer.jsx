@@ -3,7 +3,7 @@ import {
 } from '../actions/actionConstants';
 
 import {
-  responsePreferenceWeights,
+  responsePreferenceWeights, preferenceScorePerCountry,
 } from '../../constants/surveyAlgorithms';
 
 const initialState = {
@@ -103,27 +103,8 @@ const getScoreMultipleResponse = (allUserAnswers, algorithmWeightObject, questio
   return [careerLifePreferenceScore, riskPreferenceScore];
 };
 
-const handleSubmitSurvey = (state, action) => {
-  let userValueObject = action.payload;
-  const userValueObjectKeys = Object.keys(userValueObject);
-  const newState = Object.assign({}, state);
-  if (checkIfSpouseHasHigherScore(userValueObject) === true) {
-    flipDegrees(userValueObject);
-  };
-  let eligibilityScore = checkIfMarried(userValueObject, responsePreferenceWeights);
-
-  userValueObjectKeys.map((item) => {
-    let userResponseValue = userValueObject[item];
-    if (userResponseValue !== "") {
-      const careerLifePreferenceScore = (typeof userValueObject[item] === "string") ?
-        getScoreSingleResponse(userValueObject, responsePreferenceWeights, item, userResponseValue) :
-        getScoreMultipleResponse(userValueObject, responsePreferenceWeights, item, userResponseValue);
-      newState["careerLifePreferenceScore"] += careerLifePreferenceScore[0];
-      newState["riskPreferenceScore"] += careerLifePreferenceScore[1];
-    }
-  });
-
-  let eligibilityScoreUpdate = newState["surveyResults"]["eligibility"];
+const updateEligibilityScore = (propState, eligibilityScore) => {
+  let eligibilityScoreUpdate = propState["surveyResults"]["eligibility"];
   //updates australia eligibility score
   eligibilityScoreUpdate[0][1] += eligibilityScore[2];
   //updates canada eligibility score
@@ -137,12 +118,61 @@ const handleSubmitSurvey = (state, action) => {
   //updates ireland eligibility score
   eligibilityScoreUpdate[5][1] += eligibilityScore[7];
   //updates survey submission status
-  newState["isSurveySubmitted"] = true;
-  return newState;
+  propState["isSurveySubmitted"] = true;
+  return propState;
 };
 
-const calcPrefScoresPerCountry = (state, action) => {
+const updatePreferenceScoreMapping = (propState, preferenceScorePerCountry, updatedValue) => {
+  let assignCountryValues = Object.keys(preferenceScorePerCountry);
+  let indexCounter = 0;
+  assignCountryValues.map((value) => {
+    let countryFieldValue = preferenceScorePerCountry[value][updatedValue];
+    if (updatedValue === "Life" || "Career") {
+      propState["surveyResults"]["careerLifePreference"][indexCounter][1] = countryFieldValue;
+    };
+    if (updatedValue === "riskTaking || riskAverse") {
+      propState["surveyResults"]["riskPreference"][indexCounter][1] = countryFieldValue;
+    };
+    indexCounter += 1;
+  });
+  return propState;
+};
 
+const updatePreferenceScore = (propState, preferenceScorePerCountry) => {
+  propState["careerLifePreferenceScore"] >= 0 ?
+    updatePreferenceScoreMapping(propState, preferenceScorePerCountry, "Life"):
+    updatePreferenceScoreMapping(propState, preferenceScorePerCountry, "Career");
+  propState["riskPreferenceScore"] >= 0 ?
+    updatePreferenceScoreMapping(propState, preferenceScorePerCountry, "riskTaking"):
+    updatePreferenceScoreMapping(propState, preferenceScorePerCountry, "riskAverse");
+};
+
+const updateIndustryScore = (propState, preferenceScorePerCountry, userChoices) => {
+
+};
+
+const handleSubmitSurvey = (state, action) => {
+  let userValueObject = action.payload;
+  const userValueObjectKeys = Object.keys(userValueObject);
+  const newState = Object.assign({}, state);
+  if (checkIfSpouseHasHigherScore(userValueObject) === true) {
+    flipDegrees(userValueObject);
+  };
+  let eligibilityScore = checkIfMarried(userValueObject, responsePreferenceWeights);
+  userValueObjectKeys.map((item) => {
+    let userResponseValue = userValueObject[item];
+    if (userResponseValue !== "") {
+      const careerLifePreferenceScore = (typeof userValueObject[item] === "string") ?
+        getScoreSingleResponse(userValueObject, responsePreferenceWeights, item, userResponseValue) :
+        getScoreMultipleResponse(userValueObject, responsePreferenceWeights, item, userResponseValue);
+      newState["careerLifePreferenceScore"] += careerLifePreferenceScore[0];
+      newState["riskPreferenceScore"] += careerLifePreferenceScore[1];
+    }
+  });
+  updateEligibilityScore(newState, eligibilityScore);
+  updatePreferenceScore(newState, preferenceScorePerCountry);
+  updateIndustryScore(newState, preferenceScorePerCountry, userValueObject["questionSevenPartOneSelected"]);
+  return newState;
 };
 
 const submission = (state = initialState, action) => {
