@@ -278,7 +278,40 @@ const transformDataForIllustration = (propState) => {
 };
 
 const eligibilityValueAdjustment = (propState) => {
-  // propState["surveyResults"][eligibility];
+  if (propState["surveyResults"]["eligibility"][0][1] > 60) {
+    //australia
+    propState["surveyResults"]["eligibility"][0][1] = 10;
+  }
+  if (propState["surveyResults"]["eligibility"][1][1] > 430) {
+    //canada
+    propState["surveyResults"]["eligibility"][1][1] = 10;
+  }
+  if (propState["surveyResults"]["eligibility"][2][1] > 599) {
+    //ireland
+    propState["surveyResults"]["eligibility"][2][1] = 10;
+  } else {
+    propState["surveyResults"]["eligibility"][2][1] = 6;
+  }
+  if (propState["surveyResults"]["eligibility"][2][1] > 599) {
+    //nz
+    propState["surveyResults"]["eligibility"][2][1] = 10;
+  } else {
+    propState["surveyResults"]["eligibility"][2][1] = 6;
+  }
+  if (propState["surveyResults"]["eligibility"][2][1] > 599) {
+    //nz
+    propState["surveyResults"]["eligibility"][2][1] = 10;
+  } else {
+    propState["surveyResults"]["eligibility"][2][1] = 4;
+  }
+  if (propState["surveyResults"]["eligibility"][2][1] > 599) {
+    //nz
+    propState["surveyResults"]["eligibility"][2][1] = 10;
+  } else {
+    propState["surveyResults"]["eligibility"][2][1] = 2;
+  }
+  return propState;
+  // propState["surveyResults"]["eligibility"];
   //for Canada, if the score goes beyond 430 points, it's 10.
   //for Australia, if score goes beyond 70, it's 10.
   //per eligibility, if someone meets the criteria only after the job sponsorship,
@@ -286,7 +319,6 @@ const eligibilityValueAdjustment = (propState) => {
   //we will use 40% if someone can get PR in 5 years--Case of United Kingdom.
   //we will use 20% if someone can get PR in undefined timeline.
   //We will use 100% if someone has high academic publication volume.
-
 
 };
 
